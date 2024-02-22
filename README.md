@@ -3,3 +3,4 @@
 
 
 morten er flot
+lina er flottere

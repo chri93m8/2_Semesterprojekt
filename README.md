@@ -1,26 +1,10 @@
 # 2_Semesterprojekt
 
 
+Link til ur_rtde: https://sdurobotics.gitlab.io/ur_rtde/examples/examples.html#cmake-example
 
-morten er flot
-lina er flottere
+åben terminal i mappe og cd til build, eller åben terminal i /build/
+> c make ..
+> make 
+> ./main 
 
-CMake til ur_rtde virker ikke((
-
-
-jeg ændrer lige noget
-
-hejhbi
-
-asdsad
-
-asdasd
-asd
-
-asd
-
-asd
-
-hje morten
-
-branch

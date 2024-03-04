@@ -3,8 +3,8 @@ project(main)
 
 # find_package(ur_rtde REQUIRED)
 find_package(ur_rtde REQUIRED)
-add_executable(ur_rtde_cmake_example main.cpp)
-target_link_libraries(ur_rtde_cmake_example PRIVATE ur_rtde::rtde)
+add_executable(main main.cpp)
+target_link_libraries(main PRIVATE ur_rtde::rtde)
 
 
 

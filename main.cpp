@@ -8,6 +8,7 @@ using namespace std::chrono;
 
 int main(int argc, char* argv[])
 {
+	std::cout << "git sjov" << std::endl;
 	// The constructor simply takes the IP address of the Robot
 	RTDEControlInterface rtde_control("127.0.0.1");
 	// First argument is the pose 6d vector followed by speed and acceleration

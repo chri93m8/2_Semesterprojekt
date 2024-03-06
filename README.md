@@ -10,3 +10,5 @@ Link til ur_rtde: https://sdurobotics.gitlab.io/ur_rtde/examples/examples.html#c
 - make   
 - ./main   
 
+
+  test

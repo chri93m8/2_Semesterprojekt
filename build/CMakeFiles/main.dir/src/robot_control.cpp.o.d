@@ -1,6 +1,7 @@
-CMakeFiles/main.dir/main.cpp.o: \
- /home/morten/Workspace/2_Semesterprojekt/main.cpp \
+CMakeFiles/main.dir/src/robot_control.cpp.o: \
+ /home/morten/Workspace/2_Semesterprojekt/src/robot_control.cpp \
  /usr/include/stdc-predef.h \
+ /home/morten/Workspace/2_Semesterprojekt/include/robot_control.h \
  /usr/local/include/ur_rtde/rtde_control_interface.h \
  /usr/local/include/ur_rtde/rtde.h \
  /usr/local/include/ur_rtde/rtde_export.h \
@@ -821,5 +822,4 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/c++/11/bits/fstream.tcc \
  /usr/local/include/urcl/script_sender.h \
  /usr/local/include/urcl/tcp_server.h /usr/local/include/urcl/log.h \
- /usr/include/c++/11/cinttypes /usr/include/inttypes.h \
- /home/morten/Workspace/2_Semesterprojekt/include/robot_control.h
+ /usr/include/c++/11/cinttypes /usr/include/inttypes.h

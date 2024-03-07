@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/morten/Workspace/2_Semesterprojekt/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
+  "/home/morten/Workspace/2_Semesterprojekt/src/robot_control.cpp" "CMakeFiles/main.dir/src/robot_control.cpp.o" "gcc" "CMakeFiles/main.dir/src/robot_control.cpp.o.d"
   )
 
 # Targets to which this target links.

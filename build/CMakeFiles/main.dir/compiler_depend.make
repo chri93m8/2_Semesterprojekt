@@ -909,7 +909,8 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/local/include/urcl/tcp_server.h \
   /usr/local/include/urcl/log.h \
   /usr/include/c++/11/cinttypes \
-  /usr/include/inttypes.h
+  /usr/include/inttypes.h \
+  ../include/robot_control.h
 
 
 /usr/include/c++/11/cinttypes:
@@ -2243,6 +2244,8 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
 /usr/include/boost/exception/exception.hpp:
 
 /usr/include/boost/asio/execution/bad_executor.hpp:
+
+../include/robot_control.h:
 
 /usr/include/boost/asio/execution/blocking.hpp:
 

@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/robot_control.o: src/robot_control.cpp.o
+.PHONY : src/robot_control.o
+
+# target to build an object file
+src/robot_control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/robot_control.cpp.o
+.PHONY : src/robot_control.cpp.o
+
+src/robot_control.i: src/robot_control.cpp.i
+.PHONY : src/robot_control.i
+
+# target to preprocess a source file
+src/robot_control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/robot_control.cpp.i
+.PHONY : src/robot_control.cpp.i
+
+src/robot_control.s: src/robot_control.cpp.s
+.PHONY : src/robot_control.s
+
+# target to generate assembly for a file
+src/robot_control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/robot_control.cpp.s
+.PHONY : src/robot_control.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/robot_control.o"
+	@echo "... src/robot_control.i"
+	@echo "... src/robot_control.s"
 .PHONY : help
 
 

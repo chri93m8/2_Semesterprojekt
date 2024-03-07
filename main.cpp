@@ -1,4 +1,5 @@
 #include <ur_rtde/rtde_control_interface.h>
+#include "robot_control.h"
 #include <thread>
 #include <chrono>
 #include <vector>
@@ -8,10 +9,14 @@ using namespace std::chrono;
 
 int main(int argc, char* argv[]) {
 	std::cout << "test" << std::endl;
+	Robot_control rc("192.168.1.10");
+	
+	rc.connect();
+	
 	// The constructor simply takes the IP address of the Robot
-	RTDEControlInterface rtde_control("192.168.1.10");
-	std::cout << rtde_control.getRobotStatus() << std::endl;
-	std::cout << rtde_control.isProgramRunning() << std::endl;
+	//RTDEControlInterface rtde_control("192.168.1.10");
+	//std::cout << rtde_control.getRobotStatus() << std::endl;
+	//std::cout << rtde_control.isProgramRunning() << std::endl;
 	//rtde_control.teachMode();
 	//std::this_thread::sleep_for(std::chrono::milliseconds(5000));
 	//rtde_control.endTeachMode();

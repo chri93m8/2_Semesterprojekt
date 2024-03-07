@@ -2,6 +2,7 @@
 #define ROBOT_CONTROL_H
 
 #include <ur_rtde/rtde_control_interface.h>
+#include <ur_rtde/dashboard_client.h>
 #include <iostream>
 
 class Robot_control {
@@ -16,7 +17,7 @@ class Robot_control {
 
 
 		// Movement
-
+		
 };
 
 

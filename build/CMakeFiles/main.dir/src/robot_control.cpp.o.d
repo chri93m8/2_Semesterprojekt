@@ -822,4 +822,9 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: \
  /usr/include/c++/11/bits/fstream.tcc \
  /usr/local/include/urcl/script_sender.h \
  /usr/local/include/urcl/tcp_server.h /usr/local/include/urcl/log.h \
- /usr/include/c++/11/cinttypes /usr/include/inttypes.h
+ /usr/include/c++/11/cinttypes /usr/include/inttypes.h \
+ /usr/local/include/ur_rtde/dashboard_client.h \
+ /usr/local/include/ur_rtde/dashboard_enums.h \
+ /usr/include/boost/asio/streambuf.hpp \
+ /usr/include/boost/asio/basic_streambuf.hpp \
+ /usr/include/boost/asio/basic_streambuf_fwd.hpp

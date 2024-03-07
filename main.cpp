@@ -6,16 +6,20 @@
 using namespace ur_rtde;
 using namespace std::chrono; 
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
 	std::cout << "test" << std::endl;
 	// The constructor simply takes the IP address of the Robot
-	RTDEControlInterface rtde_control("127.0.0.1");
+	RTDEControlInterface rtde_control("192.168.1.10");
+	std::cout << rtde_control.getRobotStatus() << std::endl;
+	std::cout << rtde_control.isProgramRunning() << std::endl;
+	//rtde_control.teachMode();
+	//std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+	//rtde_control.endTeachMode();
 	// First argument is the pose 6d vector followed by speed and acceleration
-	rtde_control.moveL({-0.143, -0.435, 0.20, -0.001, 3.12, 0.04}, 0.5, 0.2);
+	//rtde_control.moveL({-0.143, -0.435, 0.20, -0.001, 3.12, 0.04}, 0.5, 0.2);
 
 	std::cout << "test" << std::endl;
-  return 0;
+	return 0;
 }
 
 /*

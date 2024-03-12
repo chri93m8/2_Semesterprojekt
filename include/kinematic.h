@@ -19,11 +19,11 @@ class Kinematic {
 		void setX(std::vector<double> xPoint);
 		void setY(std::vector<double> yPoint);
 		std::vector<double> getDirectionVector();
-		std::vector<double> crossProduct(std::vector<double>* d12, std::vector<double>* d13);
-		std::vector<double> normalize(std::vector<double> p);
-		std::vector<double> rotmat2rotvec(std::vector<double>* rotmat);
-		std::vector<double> createFrame(std::vector<double>* rotvec);
-		std::vector<double> getFrame();
+		void crossProduct(std::vector<double> &d12, std::vector<double> &d13);
+		void normalize(std::vector<double> &p);
+		void rotmat2rotvec(std::vector<double> &rotmat);
+		void createFrame(std::vector<double> &rotvec);
+		void getFrame();
 		
 		
 };

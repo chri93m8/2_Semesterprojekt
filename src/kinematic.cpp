@@ -23,17 +23,9 @@ std::vector<double> Kinematic::getFrame() {
 	return _frame;
 }
 
-std::vector<double> Kinematic::normalize(std::vector<double> p) {
+void Kinematic::normalize(std::vector<double> &p) {
 	double w = sqrt( p[0] * p[0] + p[1] * p[1] + p[2] * p[2] );
-	std::cout << "w= " << w << std::endl;
-	
-	for ( int i : p ) {
-		p[i] /= w;
-	}
-	
-	//p[0] /= w;
-	//p[1] /= w;
-	//p[2] /= w;
-	
-	return p;
+	p[0] /= w;
+	p[1] /= w;
+	p[2] /= w;
 }

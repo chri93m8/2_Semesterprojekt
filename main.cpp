@@ -14,9 +14,15 @@ int main(int argc, char* argv[]) {
 	Kinematic kin;
 	//rc.connect();
 	kin.setStart(std::vector<double>{12, 42,23});
-	std::vector<double> p = kin.normalize(std::vector<double>{12,42,23});
+	std::vector<double> p = {12,42,23};
+	
+	
+	kin.normalize(p);
+	
+	int c=0;
 	for (int i : p) {
-		std::cout << p[i] << ' ' ;
+		std::cout << p[c] << std::endl;
+		c++;
 	}
 	// The constructor simply takes the IP address of the Robot
 	//RTDEControlInterface rtde_control("192.168.1.10");

@@ -7,7 +7,6 @@ Robot_control::Robot_control(std::string ip)  {
 
 void Robot_control::connect() {
 	std::cout << getIp() << std::endl;
-	//ur_rtde::DashboardClient
 	
 	try {
 		ur_rtde::RTDEControlInterface rtde_control(getIp());

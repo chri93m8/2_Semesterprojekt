@@ -20,16 +20,4 @@ class Robot_control {
 		
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
 #endif //ROBOT_CONTROL_H

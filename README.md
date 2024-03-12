@@ -14,7 +14,7 @@ Link til ur_rtde: https://sdurobotics.gitlab.io/ur_rtde/examples/examples.html#c
 # Microcontroller
 
 Forbind usbasp fra microcontroller til computer.  
-cd Microcontroller -> make. 
+cd Microcontroller -> make
 
 
 

@@ -2,34 +2,32 @@
 
 class Game_Control{
 private:
-	//presets til disc spaces
-	//presets til rod spaces
-	//presets til disc "modstand"/size
+	//pre-sets til disc spaces
+	//pre-sets til rod spaces
+	//pre-sets til disc "modstand"/size
+	//counter/ holder styr på hvor langt vi er nået med uddeling
 
 
 public:
 	void home();
 	//snakker til UR -- burde være robot_control method??
-	void discDistribution();
-	//counter/ holder styr på hvor langt vi er nået med uddeling
+	void discDistribution(); // counter funktion
 	void findDisc(); 
 	//benytter force control
 	//benytter pot-meter control
 	
-	//mic_control.Open();
+	//mic_control.Open(); // mekanisk, ikke forbindelse
 	//mic_control.Close();
 	
-	//if(modstand == size preset) --> kør disc space preset på Disc placement metode 
+	//if(modstand == size pre-set) --> kør disc space pre-set på Disc placement metode 
 	void discPlacement(int disc);
 	//UR instruktioner
-	//mic_control.Open();
-	//mic_control.Close();
 	//modtager disc
 	void discSorting();
 	//mic_control.Open();
 	//mic_control.Close();
 	
-	//fast sæt af instruktioner baseret på disc space presets
+	//fast sæt af instruktioner baseret på disc space pre-sets
 	//snakker til UR
 	//kør evt home når færdig??
 	

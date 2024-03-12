@@ -4,7 +4,7 @@ class Mic_Control{
 private:
 	
 public:
-	void Open();
+	void Open(); 
 	//afhænger af mekanik
 	void Close();
 	//afhænger af mekanik

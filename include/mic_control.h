@@ -2,11 +2,18 @@
 #define MIC_CONTROL_H
 
 
-class Mic_control {
-
-
-
-
+class Mic_Control{
+private:
+	
+public:
+	void Open(); 
+	//afhænger af mekanik
+	void Close();
+	//afhænger af mekanik
+	void readPotmeter();
+	//aner ikke hvordan det kommer til at virke
+	
+	
 
 };
 

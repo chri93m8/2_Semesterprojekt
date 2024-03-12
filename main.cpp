@@ -1,5 +1,6 @@
 //#include <ur_rtde/rtde_control_interface.h>
 #include "robot_control.h"
+#include "kinematic.h"
 #include <thread>
 #include <chrono>
 #include <vector>
@@ -10,9 +11,13 @@ using namespace std::chrono;
 int main(int argc, char* argv[]) {
 	std::cout << "test" << std::endl;
 	Robot_control rc("192.168.1.10");
-	
-	rc.connect();
-	
+	Kinematic kin;
+	//rc.connect();
+	kin.setStart(std::vector<double>{12, 42,23});
+	std::vector<double> p = kin.normalize(std::vector<double>{12,42,23});
+	for (int i : p) {
+		std::cout << p[i] << ' ' ;
+	}
 	// The constructor simply takes the IP address of the Robot
 	//RTDEControlInterface rtde_control("192.168.1.10");
 	//std::cout << rtde_control.getRobotStatus() << std::endl;

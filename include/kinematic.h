@@ -4,23 +4,25 @@
 #include <iostream>
 #include <array>
 #include <vector>
+#include <math.h>
 
 class Kinematic {
 	private:
-		double _start;
-		double _x;
-		double _y;
-		std::vector<double> frame;
+		std::vector<double> _initPoint;
+		std::vector<double> _xPoint;
+		std::vector<double> _yPoint;
+		std::vector<double> _frame;
+		
 	public:
-		void setStart(double start);
-		void setX(double x);
-		void setY(double y);
-		std::vector<double> createFrame();
+		Kinematic();
+		void setStart(std::vector<double> initPoint);
+		void setX(std::vector<double> xPoint);
+		void setY(std::vector<double> yPoint);
 		std::vector<double> getDirectionVector();
-		std::vector<double> crossProduct();
-		std::vector<double> norm();
-		std::vector<double> rotmat();
-		std::vector<double> rotvec();
+		std::vector<double> crossProduct(std::vector<double>* d12, std::vector<double>* d13);
+		std::vector<double> normalize(std::vector<double> p);
+		std::vector<double> rotmat2rotvec(std::vector<double>* rotmat);
+		std::vector<double> createFrame(std::vector<double>* rotvec);
 		std::vector<double> getFrame();
 		
 		

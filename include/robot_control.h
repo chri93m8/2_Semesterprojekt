@@ -15,7 +15,6 @@ class Robot_control {
 		std::string getIp();
 
 
-
 		// Movement
 		
 };

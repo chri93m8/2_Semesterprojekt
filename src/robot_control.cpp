@@ -1,4 +1,4 @@
- #include "robot_control.h"
+#include "robot_control.h"
 
 
 Robot_control::Robot_control(std::string ip)  {
@@ -20,4 +20,5 @@ void Robot_control::connect() {
 std::string Robot_control::getIp() {
 	return _ip;
 }
+
 

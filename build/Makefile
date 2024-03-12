@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/kinematic.o: src/kinematic.cpp.o
+.PHONY : src/kinematic.o
+
+# target to build an object file
+src/kinematic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/kinematic.cpp.o
+.PHONY : src/kinematic.cpp.o
+
+src/kinematic.i: src/kinematic.cpp.i
+.PHONY : src/kinematic.i
+
+# target to preprocess a source file
+src/kinematic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/kinematic.cpp.i
+.PHONY : src/kinematic.cpp.i
+
+src/kinematic.s: src/kinematic.cpp.s
+.PHONY : src/kinematic.s
+
+# target to generate assembly for a file
+src/kinematic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/kinematic.cpp.s
+.PHONY : src/kinematic.cpp.s
+
 src/robot_control.o: src/robot_control.cpp.o
 .PHONY : src/robot_control.o
 
@@ -189,6 +213,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/kinematic.o"
+	@echo "... src/kinematic.i"
+	@echo "... src/kinematic.s"
 	@echo "... src/robot_control.o"
 	@echo "... src/robot_control.i"
 	@echo "... src/robot_control.s"

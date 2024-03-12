@@ -17,18 +17,4 @@ public:
 
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif //MIC_CONTROL_H

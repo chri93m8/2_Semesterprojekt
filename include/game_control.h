@@ -35,18 +35,4 @@ public:
 	
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif //GAME_CONTROL_H

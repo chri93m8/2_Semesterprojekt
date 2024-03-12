@@ -10,18 +10,4 @@ class Sql {
 
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif //SQL_H

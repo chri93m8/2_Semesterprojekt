@@ -1,6 +1,7 @@
 #ifndef MIC_CONTROL_H
 #define MIC_CONTROL_H
 
+// undersøg brug af https://github.com/yan9a/serial lib
 
 class Mic_Control{
 private:

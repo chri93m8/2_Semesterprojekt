@@ -11,19 +11,24 @@ using namespace std::chrono;
 int main(int argc, char* argv[]) {
 	std::cout << "test" << std::endl;
 	Robot_control rc("192.168.1.10");
-	Kinematic kin;
 	//rc.connect();
-	kin.setStart(std::vector<double>{12, 42,23});
-	std::vector<double> p = {12,42,23};
+	//kin.setStart(std::vector<double>{12, 42,23});
+	std::vector<double> init = {10,11,12,13,14,15};
+	std::vector<double> xp = {16,17,18,19,20,21};
+	std::vector<double> yp = {22,23,24,25,26,27};
 	
 	
-	kin.normalize(p);
+	Kinematic kin(init, xp, yp);
+	std::vector<double> feat = kin.getFrame();
 	
-	int c=0;
-	for (int i : p) {
-		std::cout << p[c] << std::endl;
-		c++;
+	int i = 0;
+	for (int c : feat) {
+		std::cout << feat[i] << std::endl;
+		i++;
 	}
+	//kin.normalize(p);
+	
+	
 	// The constructor simply takes the IP address of the Robot
 	//RTDEControlInterface rtde_control("192.168.1.10");
 	//std::cout << rtde_control.getRobotStatus() << std::endl;

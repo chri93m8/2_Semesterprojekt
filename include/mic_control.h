@@ -1,18 +1,23 @@
 #ifndef MIC_CONTROL_H
 #define MIC_CONTROL_H
 
+// undersøg brug af https://github.com/yan9a/serial lib
 
 class Mic_Control{
 private:
 	
 public:
-	void Open(); 
-	//afhænger af mekanik
-	void Close();
-	//afhænger af mekanik
-	void readPotmeter();
-	//aner ikke hvordan det kommer til at virke
+
+	void requestData();
+	// spøg MC om data fra Potmeter og motor amp
 	
+	void Open(); 
+	//Send signal til MC der åbner gribbern
+	//brug requestdata() til at se hvornår den er åben (potmeter)
+	
+	void Close();
+	//Send signal til MC der åbner gribbern
+	//brug requestdata() til at se hvornår den er lukket (Motor amp) 
 	
 
 };

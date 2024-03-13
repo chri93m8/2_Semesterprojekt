@@ -13,21 +13,22 @@ int main(int argc, char* argv[]) {
 	Robot_control rc("192.168.1.10");
 	//rc.connect();
 	//kin.setStart(std::vector<double>{12, 42,23});
-	std::vector<double> init = {10,11,12,13,14,15};
-	std::vector<double> xp = {16,17,18,19,20,21};
-	std::vector<double> yp = {22,23,24,25,26,27};
+	std::vector<double> init = {-0.143, -0.435, 0.20, -0.001, 3.12, 0.04};
+	std::vector<double> xp = {-0.743, -0.435, 0.20, -0.001, 3.12, 0.04};
+	std::vector<double> yp = {-0.743, -0.235, 0.20, -0.001, 3.12, 0.04};
 	
 	
 	Kinematic kin(init, xp, yp);
 	std::vector<double> feat = kin.getFrame();
+	std::cout << "\n--Frame--" << std::endl;
 	
 	int i = 0;
 	for (int c : feat) {
 		std::cout << feat[i] << std::endl;
 		i++;
 	}
+	std::cout << "------" << std::endl;
 	//kin.normalize(p);
-	
 	
 	// The constructor simply takes the IP address of the Robot
 	//RTDEControlInterface rtde_control("192.168.1.10");
@@ -39,7 +40,6 @@ int main(int argc, char* argv[]) {
 	// First argument is the pose 6d vector followed by speed and acceleration
 	//rtde_control.moveL({-0.143, -0.435, 0.20, -0.001, 3.12, 0.04}, 0.5, 0.2);
 
-	std::cout << "test" << std::endl;
 	return 0;
 }
 

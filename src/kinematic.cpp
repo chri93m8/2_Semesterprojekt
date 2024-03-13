@@ -19,6 +19,12 @@ std::vector<double> Kinematic::normalize(std::vector<double> p) {
 	p[1] /= w;
 	p[2] /= w;
 	
+	/*
+	for (int i = 0; i < p.size(); i++) {
+		std::cout << "p= " << p[i] << std::endl;
+	}
+	*/
+	
 	return p;
 }
 
@@ -39,7 +45,7 @@ std::vector<double> Kinematic::crossProduct(std::vector<double> u, std::vector<d
 }
 
 double Kinematic::d2r(double degree) {
-	return degree * 3.14159265358979 / 180;
+	return degree * pi / 180;
 }
 
 std::vector<double> Kinematic::rotmat2rotvec(std::vector<double> rotmat) {
@@ -54,20 +60,17 @@ std::vector<double> Kinematic::rotmat2rotvec(std::vector<double> rotmat) {
 	double r23 = rotmat[7];
 	double r33 = rotmat[8];
 	
-	
-	for (int i : rotmat ) {
-		std::cout << i << ' ';
-		
-	}
-	
 	double ux = 0;
 	double uy = 0;
 	double uz = 0;
 
 	// rotation matrix to rotation vector
 	double theta = acos((r11+r22+r33-1)/2);
+	
 	double sth = sin(theta);
-	std::cout << theta << " " << (r11+r22+r33-1)/2 << std::endl;
+	
+	std::cout << "theta= " << theta << " " << (r11+r22+r33-1)/2 << std::endl;
+	
 	if ( (theta > d2r(179.99)) || (theta < d2r(-179.99)) ) {
 		theta = d2r(180);
 		if (r21 < 0) {
@@ -104,24 +107,79 @@ std::vector<double> Kinematic::rotmat2rotvec(std::vector<double> rotmat) {
 
 }
 void Kinematic::createFrame() {
+
 	// Step 1. Get the direction vectors
 	std::vector<double> d12 = { _xPoint[0] - _initPoint[0], _xPoint[1] - _initPoint[1], _xPoint[2] - _initPoint[2] };
 	std::vector<double> d13 = { _yPoint[0] - _initPoint[0], _yPoint[1] - _initPoint[1], _yPoint[2] - _initPoint[2] };
 	
+	for (int i = 0; i < d12.size(); i++) {
+		std::cout << "d12= " << d12[i] << std::endl;
+	}
+	
+	std::cout << "------" << std::endl;
+	for (int i = 0; i < d13.size(); i++) {
+		std::cout << "d13= " << d13[i] << std::endl;
+	}
+
 	// Step 2. Get the direction vector of Z axis by cross product of d12 and d13
 	std::vector<double> dz = crossProduct(d12, d13);
 	
+	
+	std::cout << "------" << std::endl;
+	for (int i = 0; i < dz.size(); i++) {
+		std::cout << "dz= " << dz[i] << std::endl;
+	}
+	
+	std::cout << "------" << std::endl;
+	
 	// Step 3. Get the X and Z unit direction vectors by normalizing d12 and dz
 	std::vector<double> temp = normalize(d12);
-	std::vector<double> ux = { d12[0]/temp[0], d12[1]/temp[1], d12[2]/temp[2] };
+	
+	for (int i = 0; i < temp.size(); i++) {
+		std::cout << "temp= " << temp[i] << std::endl;
+	}
+	
+	std::cout << "------" << std::endl;
+	
+	std::vector<double> ux = { d12[0]/temp[0], d12[1]/temp[0], d12[2]/temp[0] };
+	
+	for (int i = 0; i < ux.size(); i++) {
+		std::cout << "ux= " << ux[i] << std::endl;
+	}
+	std::cout << "------" << std::endl;
+	
 	temp = normalize(dz);
-	std::vector<double> uz = { dz[0]/temp[0], dz[1]/temp[1], dz[2]/temp[2] };
+	
+	for (int i = 0; i < temp.size(); i++) {
+		std::cout << "norm temp dz= " << temp[i] << std::endl;
+	}
+	std::cout << "------" << std::endl;
+	
+	std::vector<double> uz = { dz[0]/temp[2], dz[1]/temp[2], dz[2]/temp[2] };
+	
+	for (int i = 0; i < uz.size(); i++) {
+		std::cout << "uz= " << uz[i] << std::endl;
+	}
+	std::cout << "------" << std::endl;
+	
+	
+	
 	
 	// Step 4. Get Y unit direction vector by cross product of uz and ux
 	std::vector<double> uy = crossProduct(uz, ux);
+
+	for (int i = 0; i < uy.size(); i++) {
+		std::cout << "uy= " << uy[i] << std::endl;
+	}
+	std::cout << "------" << std::endl;
 	
 	// Step 5. Get the rotation matrix from the unit direction vectors
 	std::vector<double> rotmat = { ux[0], ux[1], ux[2], uy[0], uy[1], uy[2], uz[0], uz[1], uz[2] };
+	
+	for (int i = 0; i < rotmat.size(); i++) {
+		std::cout << "rotmat= " << rotmat[i] << std::endl;
+	}
+	std::cout << "------" << std::endl;
 	
 	// Step 6. Get the rotation vector from the rotation matrix
 	std::vector<double> rotvec = rotmat2rotvec(rotmat);

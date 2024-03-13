@@ -8,6 +8,7 @@
 
 class Kinematic {
 	private:
+		const double pi = std::acos(-1);
 		std::vector<double> _initPoint;
 		std::vector<double> _xPoint;
 		std::vector<double> _yPoint;

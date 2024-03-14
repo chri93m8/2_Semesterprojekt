@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
 	//rc.writeFrame(a);
 	//a = rc.readFrame();
 	rc.gameControl();
-	rc.moveTrans();
+	//rc.moveTrans();
 	/*
 	try {
 

@@ -1,30 +1,37 @@
 //#include <ur_rtde/rtde_control_interface.h>
+//#include <ur_rtde/rtde_receive_interface.h>
+//#include <thread>
+//#include <chrono>
 #include "robot_control.h"
 #include "kinematic.h"
-#include <thread>
-#include <chrono>
 #include <vector>
 
-#include <ur_rtde/rtde_control_interface.h>
-#include <ur_rtde/rtde_receive_interface.h>
 
-using namespace ur_rtde;
-using namespace std::chrono; 
 
 int main(int argc, char* argv[]) {
-	std::cout << "test" << std::endl;
-	//Robot_control rc("192.168.1.54");
+
+	std::vector<double> a;
+	Robot_control rc("192.168.1.54");
+	a = rc.getPose();
+	
+
+	rc.run();
+
+
+	/*
+	try {
+
+	}
+	catch (const std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+	*/
 	//rc.connect();	
 	
-	ur_rtde::RTDEControlInterface rtde_control("192.168.1.54");
-	ur_rtde::RTDEReceiveInterface rtde_receive("192.168.1.54");
+	//run();
+
 	
 	
-	std::vector<double> cc = rtde_receive.getActualTCPPose();
-	//rtde_control.moveL(cc, 0.5, 0.2); 
-	for (double i : cc) {
-		std::cout << i << std::endl;
-	}
 	
 	/*
 	// Parameters
@@ -55,49 +62,7 @@ int main(int argc, char* argv[]) {
 	
 	//std::vector<double> a = rtde_receive.getActualTCPPose();
 	//kin.setStart(std::vector<double>{12, 42,23});
-	std::vector<double> init;//= {-0.143, -0.435, 0.20, -0.001, 3.12, 0.04};
-	std::vector<double> xp;// = {-0.743, -0.435, 0.20, -0.001, 3.12, 0.04};
-	std::vector<double> yp;// = {-0.743, -0.235, 0.20, -0.001, 3.12, 0.04};
-	
-	std::cout << "Click Enter when robot is at the right init point";
-	std::cin.ignore();
-	//init = rc.getPose();
-	init = rtde_receive.getActualTCPPose();
-	
-	for (double i : init) {
-		std::cout << i << std::endl;
-	}
-	
-	std::cout << "Click Enter when robot is at the right x point";
-	std::cin.ignore();
-	//xp = rc.getPose();
-	xp = rtde_receive.getActualTCPPose();
-	
-	for (double i : xp) {
-		std::cout << i << std::endl;
-	}
-	
-	std::cout << "Click Enter when robot is at the right y point";
-	std::cin.ignore();
-	//yp = rc.getPose();
-	yp = rtde_receive.getActualTCPPose();
-	
-	for (double i : yp) {
-		std::cout << i << std::endl;
-	}
-	
-	
-	Kinematic kin(init, xp, yp);
-	std::vector<double> feat = kin.getFrame();
-	std::cout << "\n--Frame--" << std::endl;
-	
-	int i = 0;
-	for (int c : feat) {
-		std::cout << feat[i] << std::endl;
-		i++;
-	}
-	
-	std::cout << "------" << std::endl;
+
 	//kin.normalize(p);
 	
 	// The constructor simply takes the IP address of the Robot
@@ -110,41 +75,6 @@ int main(int argc, char* argv[]) {
 	// First argument is the pose 6d vector followed by speed and acceleration
 	//rtde_control.moveL({-0.143, -0.435, 0.20, -0.001, 3.12, 0.04}, 0.5, 0.2);
 
-	double velocity = 0.5;
-	double acceleration = 0.5;
-	double blend_1 = 0.0;
-	double blend_2 = 0.02;
-	double blend_3 = 0.0;
-	std::vector<double> path_pose1 = {-0.143, -0.435, 0.20, -0.001, 3.12, 0.04, velocity, acceleration, blend_1};
-	std::vector<double> path_pose2 = {-0.143, -0.51, 0.21, -0.001, 3.12, 0.04, velocity, acceleration, blend_2};
-	std::vector<double> path_pose3 = {-0.32, -0.61, 0.31, -0.001, 3.12, 0.04, velocity, acceleration, blend_3};
-
-
-	std::vector<double> init_p = init;//= {-0.143, -0.435, 0.20, -0.001, 3.12, 0.04};
-	init_p.push_back(velocity);
-	init_p.push_back(acceleration);
-	init_p.push_back(blend_1);
-	for (double d : init_p) {
-		std::cout << "asd: " << d << std::endl;
-	}
-	std::vector<double> xp_p = xp;// = {-0.743, -0.435, 0.20, -0.001, 3.12, 0.04};
-	xp_p.push_back(velocity);
-	xp_p.push_back(acceleration);
-	xp_p.push_back(blend_2);
-	std::vector<double> yp_p = yp;// = {-0.743, -0.235, 0.20, -0.001, 3.12, 0.04};
-	yp_p.push_back(velocity);
-	yp_p.push_back(acceleration);
-	yp_p.push_back(blend_3);
-
-	std::vector<std::vector<double>> path;
-	path.push_back(init_p);
-	path.push_back(xp_p);
-	path.push_back(yp_p);
-
-	// Send a linear path with blending in between - (currently uses separate script)
-  	rtde_control.moveL(path);
-	// Stop the RTDE control script
-	rtde_control.stopScript();
 	
 	
 	return 0;

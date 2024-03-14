@@ -10,17 +10,14 @@
 class Robot_control {
 	private:
 		std::string _ip;
-		std::vector<double> _point;
-		
+		ur_rtde::RTDEReceiveInterface rtde_r;
+		ur_rtde::RTDEControlInterface rtde_c;		
 	public:
 		Robot_control(std::string ip);
-		// Practical stuff
 		void connect();
 		std::string getIp();
 		std::vector<double> getPose();
-
-
-		// Movement
+		void run();
 		
 };
 

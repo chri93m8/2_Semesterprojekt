@@ -125,9 +125,14 @@ void Robot_control::moveTrans() {
 	
 	if (isFrameCreated()) { 
 		std::vector<double> frame = getFrame();
-		std::vector<double> frameTrans1 = rtde_c.poseTrans(frame, {.1/*-0.0767*/, /*-.0223*/.0, .0,.0/* (pi*22.3/180)*/, pi, .0});	
-		std::vector<double> frameTrans2 = rtde_c.poseTrans(frame, {.0, .1, .0, .0/* (pi*22.3/180)*/, pi, .0});	
-		std::vector<double> frameTrans3 = rtde_c.poseTrans(frame, {.0, .0, .0, .0/* (pi*22.3/180)*/, pi, .0});	
+		
+		//std::vector<double> frameTrans1 = rtde_c.poseTrans(frame, {.1/*-0.0767*/, /*-.0223*/.0, .0,.0/* (pi*22.3/180)*/, pi, .0});	
+		//std::vector<double> frameTrans2 = rtde_c.poseTrans(frame, {.0, .1, .0, .0/* (pi*22.3/180)*/, pi, .0});	
+		//std::vector<double> frameTrans3 = rtde_c.poseTrans(frame, {.0, .0, .0, .0/* (pi*22.3/180)*/, pi, .0});	
+		
+		std::vector<double> frameTrans1 = rtde_c.poseTrans(frame, {.1, .0, .0, .0,-pi,.0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
+		std::vector<double> frameTrans2 = rtde_c.poseTrans(frame, {.0, .1, .0, .0,-pi,.0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
+		std::vector<double> frameTrans3 = rtde_c.poseTrans(frame, {.0, .0, .0, .0,-pi,.0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
 		
 		frameTrans1.insert(frameTrans1.end(), {_velocity, _acceleration, _blend});
 		frameTrans2.insert(frameTrans2.end(), {_velocity, _acceleration, _blend});

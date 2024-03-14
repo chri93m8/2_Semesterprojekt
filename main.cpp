@@ -15,7 +15,14 @@ int main(int argc, char* argv[]) {
 	//a = rc.readFrame();
 	rc.gameControl();
 	//rc.moveTrans();
+
+
+
+
 	/*
+	while (rtde.getActualTCPForce() < 60 ) {
+	rtde.speedL({0,0,-.005,0,0,0});
+	}
 	try {
 
 	}

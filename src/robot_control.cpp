@@ -34,7 +34,7 @@ std::vector<double> Robot_control::getPose(){
 	return rtde_r.getActualTCPPose();
 }
 
-void Robot_control::run() {
+void Robot_control::createFrame() {
 	double velocity = 0.5;
 	double acceleration = 0.5;
 	double blend = 0.0;
@@ -75,6 +75,9 @@ void Robot_control::run() {
 		std::cout << c << std::endl;
 	}
 	
+	
+	
+	
 	std::cout << "------" << std::endl;
 	// ----------------------------------------------------------------------------------------------------
 	init.insert(init.end(), {velocity, acceleration, blend});
@@ -106,5 +109,47 @@ void Robot_control::run() {
 }
 
 
+std::vector<double> Robot_control::readFrame(){
+	//std::ofstream myfile;
+	//myfile.open ("example.txt");
+	//myfile << "Writing tasdasdasdasdhis to a file.\n";
+	//myfile.close();
+	std::vector<double> a;
+	std::ifstream _frame;
+	_frame.open("frameSave.txt");
+	std::string line;
+	if (_frame.is_open()) {
+		std::getline(_frame,line);	
+		_frame.close();
+		std::stringstream ss(line);
+		for (double i; ss >> i;) {
+			a.push_back(i); 
+			if (ss.peek() == ',' || ss.peek() == ' ') {
+				ss.ignore();
+			}
+		}
+		return a;
+	}
+	else {
+		std::cout << "Unable to open file" << std::endl; 
+	}
+	return a; //std::vector<double> {0,0,0,0,0,0};
+}
 
+void Robot_control::writeFrame(std::vector<double> &v){
+	
+	std::ofstream _frame;
+	_frame.open("frameSave.txt");
+	//_frame << "{";
+	for (int i = 0; i < v.size(); i++) {
+		if (i == v.size() - 1) {
+			_frame << v[i]; 
+		} 
+		else {
+			_frame << v[i] << ","; 
+		}
+	}
+	//_frame << "}";
+	_frame.close();
+}
 

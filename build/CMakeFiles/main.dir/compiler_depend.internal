@@ -4,6 +4,7 @@
 CMakeFiles/main.dir/main.cpp.o
  /home/morten/Workspace/2_Semesterprojekt/main.cpp
  /usr/include/stdc-predef.h
+ /home/morten/Workspace/2_Semesterprojekt/include/robot_control.h
  /usr/local/include/ur_rtde/rtde_control_interface.h
  /usr/local/include/ur_rtde/rtde.h
  /usr/local/include/ur_rtde/rtde_export.h
@@ -1178,7 +1179,6 @@ CMakeFiles/main.dir/main.cpp.o
  /usr/include/boost/type_traits/add_pointer.hpp
  /usr/include/boost/variant/visitor_ptr.hpp
  /usr/include/boost/variant/bad_visit.hpp
- /home/morten/Workspace/2_Semesterprojekt/include/robot_control.h
  /usr/local/include/ur_rtde/dashboard_client.h
  /usr/local/include/ur_rtde/dashboard_enums.h
  /usr/include/boost/asio/streambuf.hpp

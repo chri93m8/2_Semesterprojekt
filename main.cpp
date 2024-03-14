@@ -9,9 +9,14 @@
 int main(int argc, char* argv[]) {
 
 	Robot_control rc("192.168.1.54");
-	rc.run();
+	//rc.createFrame();
+	std::vector<double> a = {-1.54, -1.83, -2.28, -0.59, 1.60, 0.023};
+	rc.writeFrame(a);
+	a = rc.readFrame();
 
-
+	for (const double d : a ) {
+		std::cout << d << std::endl;
+	}
 	/*
 	try {
 

@@ -1,14 +1,6 @@
 #include "game_control.h"
+#include <ur_rtde/rtde_control_interface.h>
+#include <ur_rtde/rtde_receive_interface.h>
 
-//rod presets {x,y,z}
-std::vector<double> rod1 = {75, 100, 35} //3rd tier
-std::vector<double> rod2 = {200, 100, 35}
-std::vector<double> rod3 = {325, 100, 35}
 
-//disc place presets {x,y,z}
-std::vector<double> discP1 = {100, 275, 25} //largest -- 2nd tier
-std::vector<double> discP2 = {300, 275, 25}
 
-std::vector<double> discP3 = {75, 425, 10} // 1st tier
-std::vector<double> discP4 = {200, 425, 10}
-std::vector<double> discP5 = {325, 425, 10} //smallest

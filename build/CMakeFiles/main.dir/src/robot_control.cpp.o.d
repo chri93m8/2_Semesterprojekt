@@ -1074,10 +1074,5 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: \
  /usr/include/boost/type_traits/add_pointer.hpp \
  /usr/include/boost/variant/visitor_ptr.hpp \
  /usr/include/boost/variant/bad_visit.hpp \
- /usr/local/include/ur_rtde/dashboard_client.h \
- /usr/local/include/ur_rtde/dashboard_enums.h \
- /usr/include/boost/asio/streambuf.hpp \
- /usr/include/boost/asio/basic_streambuf.hpp \
- /usr/include/boost/asio/basic_streambuf_fwd.hpp \
  /home/morten/Workspace/2_Semesterprojekt/include/kinematic.h \
  /usr/include/c++/11/math.h

@@ -34,11 +34,28 @@ std::vector<double> Robot_control::getPose(){
 	return rtde_r.getActualTCPPose();
 }
 
+void Robot_control::gameControl() {
+	std::cout << "--Menu--" << std::endl;
+	std::cout << "Create new frame, Press 1" << std::endl;
+	std::cout << "Print current frame, Press 2"<< std::endl;
+	int input;
+	std::cin >> input;
+	switch(input) {
+		case 1:
+			createFrame();
+			break;
+		case 2:
+			printFrame();
+			break;
+		default:
+			std::cout << "heste" << std::endl;
+			break;
+	}
+}
+
+
 void Robot_control::createFrame() {
-	double velocity = 0.5;
-	double acceleration = 0.5;
-	double blend = 0.0;
-	
+
 	std::vector<double> init;//= {-0.143, -0.435, 0.20, -0.001, 3.12, 0.04};
 	std::vector<double> xp;// = {-0.743, -0.435, 0.20, -0.001, 3.12, 0.04};
 	std::vector<double> yp;// = {-0.743, -0.235, 0.20, -0.001, 3.12, 0.04};
@@ -69,33 +86,19 @@ void Robot_control::createFrame() {
 	
 	Kinematic kin(init, xp, yp);
 	std::vector<double> feat = kin.getFrame();
+	writeFrame(feat);
 	std::cout << "\n--Frame--" << std::endl;
 	
 	for (double c : feat) {
 		std::cout << c << std::endl;
 	}
 	
-	
-	
-	
 	std::cout << "------" << std::endl;
 	// ----------------------------------------------------------------------------------------------------
-	init.insert(init.end(), {velocity, acceleration, blend});
-	xp.insert(xp.end(), {velocity, acceleration, blend});
-	yp.insert(yp.end(), {velocity, acceleration, blend});
-	
 	/*
-	init.push_back(velocity);
-	init.push_back(acceleration);
-	init.push_back(blend);
-	xp.push_back(velocity);
-	xp.push_back(acceleration);
-	xp.push_back(blend);
-	
-	yp.push_back(velocity);
-	yp.push_back(acceleration);
-	yp.push_back(blend);
-	*/
+	init.insert(init.end(), {_velocity, _acceleration, _blend});
+	xp.insert(xp.end(), {_velocity, _acceleration, _blend});
+	yp.insert(yp.end(), {_velocity, _acceleration, _blend});
 
 	std::vector<std::vector<double>> path;
 	path.push_back(init);
@@ -106,14 +109,71 @@ void Robot_control::createFrame() {
   	rtde_c.moveL(path);
 	// Stop the RTDE control script
 	rtde_c.stopScript();
+	*/
+}
+
+bool Robot_control::isFrameCreated() {
+	std::vector<double> a = getFrame();
+	return ( a[0] == 0 && a.size() == 1 ? false : true);
+}
+
+void Robot_control::moveTrans() {
+	
+	if (isFrameCreated()) { 
+		std::vector<double> frame = getFrame();
+		std::vector<double> frameTrans1 = rtde_c.poseTrans(frame, {-0.1, .0, .0, .0, pi, .0});	
+		std::vector<double> frameTrans2 = rtde_c.poseTrans(frame, {.0, -.1, .0, .0, pi, .0});	
+		std::vector<double> frameTrans3 = rtde_c.poseTrans(frame, {.0, .0, .0, .0, pi, .0});	
+		
+		/*
+		for ( const double d : frameTrans) {
+			std::cout << d << std::endl;
+		}
+		*/
+		frameTrans1.insert(frameTrans1.end(), {_velocity, _acceleration, _blend});
+		frameTrans2.insert(frameTrans2.end(), {_velocity, _acceleration, _blend});
+		frameTrans3.insert(frameTrans3.end(), {_velocity, _acceleration, _blend});
+
+		std::vector<std::vector<double>> path;
+		path.push_back(frameTrans1);
+		path.push_back(frameTrans3);
+		path.push_back(frameTrans2);
+		path.push_back(frameTrans3);
+		
+		// Send a linear path with blending in between - (currently uses separate script)
+	  	rtde_c.moveL(path);
+		// Stop the RTDE control script
+		rtde_c.stopScript();
+		
+	}
+	/*
+	*/
+	
+
+
 }
 
 
-std::vector<double> Robot_control::readFrame(){
-	//std::ofstream myfile;
-	//myfile.open ("example.txt");
-	//myfile << "Writing tasdasdasdasdhis to a file.\n";
-	//myfile.close();
+
+
+
+
+
+
+
+
+
+
+
+void Robot_control::printFrame() {
+	std::vector<double> a = getFrame();
+	for (const double i : a ) {
+			std::cout << i << ' ';
+		}
+	std::cout << std::endl;
+}
+
+std::vector<double> Robot_control::getFrame(){
 	std::vector<double> a;
 	std::ifstream _frame;
 	_frame.open("frameSave.txt");
@@ -130,17 +190,13 @@ std::vector<double> Robot_control::readFrame(){
 		}
 		return a;
 	}
-	else {
-		std::cout << "Unable to open file" << std::endl; 
-	}
-	return a; //std::vector<double> {0,0,0,0,0,0};
+	std::cout << "Unable to open file" << std::endl; 
+	return {0};
 }
 
 void Robot_control::writeFrame(std::vector<double> &v){
-	
 	std::ofstream _frame;
 	_frame.open("frameSave.txt");
-	//_frame << "{";
 	for (int i = 0; i < v.size(); i++) {
 		if (i == v.size() - 1) {
 			_frame << v[i]; 
@@ -149,7 +205,6 @@ void Robot_control::writeFrame(std::vector<double> &v){
 			_frame << v[i] << ","; 
 		}
 	}
-	//_frame << "}";
 	_frame.close();
 }
 

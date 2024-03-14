@@ -6,15 +6,9 @@
 #include "kinematic.h"
 #include <vector>
 
-
-
 int main(int argc, char* argv[]) {
 
-	std::vector<double> a;
 	Robot_control rc("192.168.1.54");
-	a = rc.getPose();
-	
-
 	rc.run();
 
 

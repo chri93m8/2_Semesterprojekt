@@ -16,8 +16,10 @@ class Robot_control {
 		double _acceleration = 0.15;
 		double _blend = 0.0;
 		const double pi = std::acos(-1);
+		bool _isFrameCreated; 
 	public:
 		Robot_control(std::string ip);
+		bool isFrameCreated();
 		void connect();
 		std::string getIp();
 		std::vector<double> getPose();
@@ -27,9 +29,9 @@ class Robot_control {
 		void gameControl(); // This will be moved into the game_control.h class at a later point
 		void printFrame();
 		void moveTrans();
-		bool isFrameCreated();
+		bool readFrame();
 		//------ Game_control
-		void home(); // skal være cirke {-15, 20, 20}
+		void home(std::vector<double> &v); // skal være cirke {-15, 20, 20}
 		bool forceDown(int maxHeight); // kører -> finde disk -> stop movement -> return
 		//void move(std:vector<double> &d); // {x,y,z} ( {RX,RY,RZ} skal gives på et tidspunkt ( eventuelt i contructor'en som arguement ), af game_control	
 		//void moveDown(double height); // bevæg sig ned med en given højde. Lav check på om det er i millimeter

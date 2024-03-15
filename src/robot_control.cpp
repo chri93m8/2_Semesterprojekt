@@ -4,7 +4,7 @@
 
 Robot_control::Robot_control(std::string ip) : _ip(ip), rtde_c(ip), rtde_r(ip)  {
 	_ip = ip;
-
+	_isFrameCreated = readFrame(); 
 }
 
 void Robot_control::connect() {
@@ -23,6 +23,10 @@ void Robot_control::connect() {
 		std::cout << e.what() << std::endl;
 	}
 	
+}
+
+bool Robot_control::isFrameCreated() {
+	return _isFrameCreated;
 }
 
 std::string Robot_control::getIp() {
@@ -124,7 +128,7 @@ void Robot_control::createFrame() {
 	*/
 }
 
-bool Robot_control::isFrameCreated() {
+bool Robot_control::readFrame() {
 	std::vector<double> a = getFrame();
 	return ( a[0] == 0 && a.size() == 1 ? false : true);
 }
@@ -170,6 +174,11 @@ void Robot_control::moveTrans() {
 		rtde_c.stopScript();
 		
 	}
+}
+
+void Robot_control::home(std::vector<double> &v) {
+	//if (isFrameCrated()) 
+
 }
 
 bool Robot_control::forceDown(int maxHeight) { // kører -> finde disk -> stop movement -> return

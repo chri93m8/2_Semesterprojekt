@@ -14,7 +14,7 @@ void Game_Control::home(){
 }
 
 void Game_Control::discDistribution(){
-	
+	/*
 	for(int i = 0; i<5; i++){
 		
 		disc = findDisc();
@@ -26,7 +26,7 @@ void Game_Control::discDistribution(){
 			rc.move(discSpaces[disc]);
 		}
 	}
-	
+	*/
 }
 
 int Game_Control::findDisc(){
@@ -35,9 +35,9 @@ int Game_Control::findDisc(){
 	//rc.move til rod whatever
 	//open/close gripper to slide down rod
 	
-	bool isFound = rc.forceDown(); 
+	//bool isFound = rc.forceDown(); 
 	
-	if (isFound){
+	//if (isFound){
 		
 		//benytter pot-meter control
 		//mic_control.Open(); // mekanisk, ikke forbindelse
@@ -49,12 +49,12 @@ int Game_Control::findDisc(){
 		//switch ift disc presets???
 		//gem disc status i enum?? eller array
 		
-		}
+	//	}
 	
-	return disc; //enum
+	//return disc; //enum
 }
 
-void Game_Control::discSorting(disc){ //pass by reference??
+void Game_Control::discSorting(int disc){ //pass by reference??
 
 	//counter??  //hvordan gemmer jeg hvilke discs er sorteret smart???
 	

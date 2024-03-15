@@ -14,7 +14,7 @@ class Game_Control{
 		
 		//enum Board
 			//50x40
-		
+		/*
 		struct discs { 
 			int discHeight;
 			enum disc1 = {int value = 1, bool isSorted = false, int size = 0.08 };
@@ -26,7 +26,7 @@ class Game_Control{
 			//pre-sets til disc "modstand"???
 		
 		};
-		
+		*/
 			
 		//rod presets {x, y, z, rx, ry, rz} !!!!evt fjern rotationsvektorerne
 		
@@ -42,7 +42,7 @@ class Game_Control{
 		std::vector<double> discP4 = {0.200, 0.425, 0.10, 0, 0, 0};
 		std::vector<double> discP5 = {0.325, 0.425, 0.10, 0, 0, 0}; //smallest
 		
-		std::vector<vector<double>> discSpaces = {discP1, discP2, discP3, discP4, discP5};
+		//std::vector<vector<double>> discSpaces = {discP1, discP2, discP3, discP4, discP5};
 		
 		//home preset?? (orientation? (22.3*pi)/180)
 		//(-15, 20, 20)

@@ -14,18 +14,8 @@ std::vector<double> Kinematic::getFrame() {
 
 
 double Kinematic::normalize(std::vector<double> p) {
-	double w = sqrt( p[0] * p[0] + p[1] * p[1] + p[2] * p[2] );
-	//p[0] /= w;
-	//p[1] /= w;
-	//p[2] /= w;
-	
-	/*
-	for (int i = 0; i < p.size(); i++) {
-		std::cout << "p= " << p[i] << std::endl;
-	}
-	*/
-	
-	return w;
+	//double w = sqrt( p[0] * p[0] + p[1] * p[1] + p[2] * p[2] );
+	return ( sqrt( p[0] * p[0] + p[1] * p[1] + p[2] * p[2] ) );
 }
 
 std::vector<double> Kinematic::crossProduct(std::vector<double> u, std::vector<double> v) { 
@@ -37,8 +27,6 @@ std::vector<double> Kinematic::crossProduct(std::vector<double> u, std::vector<d
 	double v2 = v[1];
 	double v3 = v[2];
 	std::vector<double> s = { (u2*v3-u3*v2), (u3*v1-u1*v3), (u1*v2-u2*v1) };
-	
-	std::cout << "s = " << s[0] << ' ' << s[1] << ' ' << s[2] << std::endl;
 	
 	return s;
 

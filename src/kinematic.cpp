@@ -85,8 +85,8 @@ std::vector<double> Kinematic::rotmat2rotvec(std::vector<double> rotmat) {
 	std::vector<double> rotvec = {(theta*ux),(theta*uy),(theta*uz)};
 
 	return rotvec;
-
 }
+	
 void Kinematic::createFrame() {
 
 	// Step 1. Get the direction vectors

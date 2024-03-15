@@ -1,6 +1,6 @@
 #include "robot_control.h"
 #include "kinematic.h"
-
+#include <chrono>
 
 Robot_control::Robot_control(std::string ip) : _ip(ip), rtde_c(ip), rtde_r(ip)  {
 	_ip = ip;
@@ -39,17 +39,25 @@ void Robot_control::gameControl() {
 	std::cout << "Create new frame, Press 1" << std::endl;
 	std::cout << "Print current frame, Press 2"<< std::endl;
 	std::cout << "Movetrans, Press 3"<< std::endl;
+	std::cout << "getPose, Press 4"<< std::endl;
+	
 	int input;
 	std::cin >> input;
 	switch(input) {
 		case 1:
-			createFrame();
+			//createFrame();
 			break;
 		case 2:
 			printFrame();
 			break;
 		case 3: 
 			moveTrans();
+			break;
+		case 4: 
+			for ( const double d : getPose() ) {
+				std::cout << d/pi*180 << ", ";
+			}
+			std::cout << std::endl;	
 			break;
 		default:
 			std::cout << "heste" << std::endl;
@@ -135,20 +143,27 @@ void Robot_control::moveTrans() {
 		std::vector<double> frameTrans3 = rtde_c.poseTrans(frame, {.0, .0, .0, (pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
 		std::vector<double> frameTrans4 = rtde_c.poseTrans(frame, {.0, .0, .1, (pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
 		
+		std::vector<double> frameTrans5 = rtde_c.poseTrans(frame, {.0, .0, .1, -(pi*90/180), .0, (pi*5/180)});//(pi*90/180), (pi*17/180), (pi*17/180)});	
+		
+		
 		frameTrans1.insert(frameTrans1.end(), {_velocity, _acceleration, _blend});
 		frameTrans2.insert(frameTrans2.end(), {_velocity, _acceleration, _blend});
 		frameTrans3.insert(frameTrans3.end(), {_velocity, _acceleration, _blend});
 		frameTrans4.insert(frameTrans4.end(), {_velocity, _acceleration, _blend});
+		frameTrans5.insert(frameTrans5.end(), {_velocity, _acceleration, _blend});
 
 		std::vector<std::vector<double>> path;
-		path.push_back(frameTrans3);
+		//path.push_back(frameTrans3);
+		path.push_back(frameTrans5);
+		
+		/*
 		path.push_back(frameTrans1);
 		path.push_back(frameTrans3);
 		path.push_back(frameTrans2);
 		path.push_back(frameTrans3);
 		path.push_back(frameTrans4);
 		path.push_back(frameTrans3);
-		
+		*/
 		// Send a linear path with blending in between - (currently uses separate script)
 	  	rtde_c.moveL(path);
 		// Stop the RTDE control script
@@ -157,8 +172,45 @@ void Robot_control::moveTrans() {
 	}
 }
 
-
-
+bool Robot_control::forceDown(int maxHeight) { // kører -> finde disk -> stop movement -> return
+	std::vector<double> joint_speed = {0.0, 0.0, -0.05, 0.0, 0.0, 0.0};
+	double startHeight = rtde_r.getActualTCPPose()[2];
+	double newHeight;
+ 	//double dt = 1.0/500; // 2ms
+	while (rtde_r.getActualTCPForce()[2] < 21 ) {
+		
+    		std::chrono::steady_clock::time_point t_start = rtde_c.initPeriod();
+		std::cout << "Force: " << rtde_r.getActualTCPForce()[2] << std::endl;
+		newHeight = startHeight - rtde_r.getActualTCPPose()[2];
+		std::cout << "newHeight: " << newHeight << std::endl;
+		rtde_c.speedL(joint_speed, _acceleration);
+    		//joint_speed[2] -= 0.05;
+    		
+    		rtde_c.waitPeriod(t_start);
+		// hvis den når en distance
+		if ( ( newHeight * 100 )  >= maxHeight ) {
+			rtde_c.speedStop();
+			rtde_c.stopScript();
+			return false;
+		}
+		
+	}
+	rtde_c.speedStop();
+	rtde_c.stopScript();
+	return true;
+	/*
+	for (int i = 0; i < 10; i++) {
+	  	std::cout << "\n";
+  		std::cin.ignore();
+		std::vector<double> a = rtde_r.getActualTCPForce();
+		
+		for ( const double d : a ) {
+			std::cout << "force = " << d << std::endl;
+		}
+		std::cout << std::endl;
+	}
+	*/
+}
 
 
 

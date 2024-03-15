@@ -1,7 +1,10 @@
 CMakeFiles/main.dir/main.cpp.o: \
- /home/lina/Workspace/2_Semesterprojekt/main.cpp \
- /usr/include/stdc-predef.h /usr/include/ur_rtde/rtde_control_interface.h \
- /usr/include/ur_rtde/rtde.h /usr/include/ur_rtde/rtde_export.h \
+ /home/morten/Workspace/2_Semesterprojekt/main.cpp \
+ /usr/include/stdc-predef.h \
+ /home/morten/Workspace/2_Semesterprojekt/include/robot_control.h \
+ /usr/local/include/ur_rtde/rtde_control_interface.h \
+ /usr/local/include/ur_rtde/rtde.h \
+ /usr/local/include/ur_rtde/rtde_export.h \
  /usr/include/boost/asio/io_service.hpp \
  /usr/include/boost/asio/io_context.hpp \
  /usr/include/boost/asio/detail/config.hpp /usr/include/boost/config.hpp \
@@ -804,7 +807,7 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/c++/11/bits/hashtable_policy.h \
  /usr/include/c++/11/bits/enable_special_members.h \
  /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/ur_rtde/rtde_utility.h /usr/include/c++/11/iostream \
+ /usr/local/include/ur_rtde/rtde_utility.h /usr/include/c++/11/iostream \
  /usr/include/c++/11/iomanip /usr/include/c++/11/locale \
  /usr/include/c++/11/bits/locale_facets_nonio.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
@@ -816,11 +819,12 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/fstream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
- /usr/include/c++/11/bits/fstream.tcc /usr/include/urcl/script_sender.h \
- /usr/include/urcl/server.h /usr/include/urcl/tcp_socket.h \
- /home/lina/Workspace/2_Semesterprojekt/include/robot_control.h \
- /usr/include/ur_rtde/rtde_receive_interface.h \
- /usr/include/ur_rtde/robot_state.h /usr/include/boost/variant.hpp \
+ /usr/include/c++/11/bits/fstream.tcc \
+ /usr/local/include/urcl/script_sender.h \
+ /usr/local/include/urcl/tcp_server.h /usr/local/include/urcl/log.h \
+ /usr/include/c++/11/cinttypes /usr/include/inttypes.h \
+ /usr/local/include/ur_rtde/rtde_receive_interface.h \
+ /usr/local/include/ur_rtde/robot_state.h /usr/include/boost/variant.hpp \
  /usr/include/boost/variant/variant.hpp /usr/include/boost/type_index.hpp \
  /usr/include/boost/type_index/stl_type_index.hpp \
  /usr/include/boost/type_index/type_index_facade.hpp \
@@ -1070,7 +1074,5 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/boost/type_traits/add_pointer.hpp \
  /usr/include/boost/variant/visitor_ptr.hpp \
  /usr/include/boost/variant/bad_visit.hpp \
- /home/lina/Workspace/2_Semesterprojekt/include/kinematic.h \
- /usr/include/c++/11/math.h \
- /home/lina/Workspace/2_Semesterprojekt/include/game_control.h \
- /home/lina/Workspace/2_Semesterprojekt/include/robot_control.h
+ /home/morten/Workspace/2_Semesterprojekt/include/kinematic.h \
+ /usr/include/c++/11/math.h

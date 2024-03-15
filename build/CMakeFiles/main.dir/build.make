@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lina/Workspace/2_Semesterprojekt
+CMAKE_SOURCE_DIR = /home/morten/Workspace/2_Semesterprojekt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lina/Workspace/2_Semesterprojekt/build
+CMAKE_BINARY_DIR = /home/morten/Workspace/2_Semesterprojekt/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -72,58 +72,58 @@ include CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main.cpp.o: ../main.cpp
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lina/Workspace/2_Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /home/lina/Workspace/2_Semesterprojekt/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morten/Workspace/2_Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /home/morten/Workspace/2_Semesterprojekt/main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lina/Workspace/2_Semesterprojekt/main.cpp > CMakeFiles/main.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morten/Workspace/2_Semesterprojekt/main.cpp > CMakeFiles/main.dir/main.cpp.i
 
 CMakeFiles/main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lina/Workspace/2_Semesterprojekt/main.cpp -o CMakeFiles/main.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morten/Workspace/2_Semesterprojekt/main.cpp -o CMakeFiles/main.dir/main.cpp.s
 
 CMakeFiles/main.dir/src/robot_control.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp
 CMakeFiles/main.dir/src/robot_control.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lina/Workspace/2_Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/robot_control.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/robot_control.cpp.o -MF CMakeFiles/main.dir/src/robot_control.cpp.o.d -o CMakeFiles/main.dir/src/robot_control.cpp.o -c /home/lina/Workspace/2_Semesterprojekt/src/robot_control.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morten/Workspace/2_Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/robot_control.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/robot_control.cpp.o -MF CMakeFiles/main.dir/src/robot_control.cpp.o.d -o CMakeFiles/main.dir/src/robot_control.cpp.o -c /home/morten/Workspace/2_Semesterprojekt/src/robot_control.cpp
 
 CMakeFiles/main.dir/src/robot_control.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/robot_control.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lina/Workspace/2_Semesterprojekt/src/robot_control.cpp > CMakeFiles/main.dir/src/robot_control.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morten/Workspace/2_Semesterprojekt/src/robot_control.cpp > CMakeFiles/main.dir/src/robot_control.cpp.i
 
 CMakeFiles/main.dir/src/robot_control.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/robot_control.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lina/Workspace/2_Semesterprojekt/src/robot_control.cpp -o CMakeFiles/main.dir/src/robot_control.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morten/Workspace/2_Semesterprojekt/src/robot_control.cpp -o CMakeFiles/main.dir/src/robot_control.cpp.s
 
 CMakeFiles/main.dir/src/kinematic.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/kinematic.cpp.o: ../src/kinematic.cpp
 CMakeFiles/main.dir/src/kinematic.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lina/Workspace/2_Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/kinematic.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/kinematic.cpp.o -MF CMakeFiles/main.dir/src/kinematic.cpp.o.d -o CMakeFiles/main.dir/src/kinematic.cpp.o -c /home/lina/Workspace/2_Semesterprojekt/src/kinematic.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morten/Workspace/2_Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/kinematic.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/kinematic.cpp.o -MF CMakeFiles/main.dir/src/kinematic.cpp.o.d -o CMakeFiles/main.dir/src/kinematic.cpp.o -c /home/morten/Workspace/2_Semesterprojekt/src/kinematic.cpp
 
 CMakeFiles/main.dir/src/kinematic.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/kinematic.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lina/Workspace/2_Semesterprojekt/src/kinematic.cpp > CMakeFiles/main.dir/src/kinematic.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morten/Workspace/2_Semesterprojekt/src/kinematic.cpp > CMakeFiles/main.dir/src/kinematic.cpp.i
 
 CMakeFiles/main.dir/src/kinematic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/kinematic.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lina/Workspace/2_Semesterprojekt/src/kinematic.cpp -o CMakeFiles/main.dir/src/kinematic.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morten/Workspace/2_Semesterprojekt/src/kinematic.cpp -o CMakeFiles/main.dir/src/kinematic.cpp.s
 
 CMakeFiles/main.dir/src/game_control.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/game_control.cpp.o: ../src/game_control.cpp
 CMakeFiles/main.dir/src/game_control.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lina/Workspace/2_Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/game_control.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/game_control.cpp.o -MF CMakeFiles/main.dir/src/game_control.cpp.o.d -o CMakeFiles/main.dir/src/game_control.cpp.o -c /home/lina/Workspace/2_Semesterprojekt/src/game_control.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/morten/Workspace/2_Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/game_control.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/game_control.cpp.o -MF CMakeFiles/main.dir/src/game_control.cpp.o.d -o CMakeFiles/main.dir/src/game_control.cpp.o -c /home/morten/Workspace/2_Semesterprojekt/src/game_control.cpp
 
 CMakeFiles/main.dir/src/game_control.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/game_control.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lina/Workspace/2_Semesterprojekt/src/game_control.cpp > CMakeFiles/main.dir/src/game_control.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/morten/Workspace/2_Semesterprojekt/src/game_control.cpp > CMakeFiles/main.dir/src/game_control.cpp.i
 
 CMakeFiles/main.dir/src/game_control.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/game_control.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lina/Workspace/2_Semesterprojekt/src/game_control.cpp -o CMakeFiles/main.dir/src/game_control.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/morten/Workspace/2_Semesterprojekt/src/game_control.cpp -o CMakeFiles/main.dir/src/game_control.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
@@ -140,12 +140,12 @@ main: CMakeFiles/main.dir/src/robot_control.cpp.o
 main: CMakeFiles/main.dir/src/kinematic.cpp.o
 main: CMakeFiles/main.dir/src/game_control.cpp.o
 main: CMakeFiles/main.dir/build.make
-main: /usr/lib/x86_64-linux-gnu/librtde.so.1.5.6
+main: /usr/local/lib/librtde.so.1.5.8
 main: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.74.0
 main: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.74.0
 main: /usr/lib/x86_64-linux-gnu/libboost_atomic.so.1.74.0
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lina/Workspace/2_Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/morten/Workspace/2_Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -157,6 +157,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	cd /home/lina/Workspace/2_Semesterprojekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lina/Workspace/2_Semesterprojekt /home/lina/Workspace/2_Semesterprojekt /home/lina/Workspace/2_Semesterprojekt/build /home/lina/Workspace/2_Semesterprojekt/build /home/lina/Workspace/2_Semesterprojekt/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/morten/Workspace/2_Semesterprojekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/morten/Workspace/2_Semesterprojekt /home/morten/Workspace/2_Semesterprojekt /home/morten/Workspace/2_Semesterprojekt/build /home/morten/Workspace/2_Semesterprojekt/build /home/morten/Workspace/2_Semesterprojekt/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/main.dir/depend
 

@@ -1,7 +1,7 @@
 CMakeFiles/main.dir/src/kinematic.cpp.o: \
- /home/lina/Workspace/2_Semesterprojekt/src/kinematic.cpp \
+ /home/morten/Workspace/2_Semesterprojekt/src/kinematic.cpp \
  /usr/include/stdc-predef.h \
- /home/lina/Workspace/2_Semesterprojekt/include/kinematic.h \
+ /home/morten/Workspace/2_Semesterprojekt/include/kinematic.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

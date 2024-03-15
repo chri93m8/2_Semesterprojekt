@@ -13,9 +13,9 @@ int main(int argc, char* argv[]) {
 	//std::vector<double> a = {-1.54, -1.83, -2.28, -0.59, 1.60, 0.023};
 	//rc.writeFrame(a);
 	//a = rc.readFrame();
-	rc.gameControl();
+	//rc.gameControl();
 	//rc.moveTrans();
-
+	rc.forceDown(10);
 
 
 

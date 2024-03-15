@@ -28,6 +28,12 @@ class Robot_control {
 		void printFrame();
 		void moveTrans();
 		bool isFrameCreated();
+		//------ Game_control
+		void home(); // skal være cirke {-15, 20, 20}
+		bool forceDown(int maxHeight); // kører -> finde disk -> stop movement -> return
+		//void move(std:vector<double> &d); // {x,y,z} ( {RX,RY,RZ} skal gives på et tidspunkt ( eventuelt i contructor'en som arguement ), af game_control	
+		//void moveDown(double height); // bevæg sig ned med en given højde. Lav check på om det er i millimeter
+		
 		
 		
 };

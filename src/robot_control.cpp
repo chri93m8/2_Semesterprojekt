@@ -130,19 +130,23 @@ void Robot_control::moveTrans() {
 		//std::vector<double> frameTrans2 = rtde_c.poseTrans(frame, {.0, .1, .0, .0/* (pi*22.3/180)*/, pi, .0});	
 		//std::vector<double> frameTrans3 = rtde_c.poseTrans(frame, {.0, .0, .0, .0/* (pi*22.3/180)*/, pi, .0});	
 		
-		std::vector<double> frameTrans1 = rtde_c.poseTrans(frame, {.1, .0, .0, .0,-pi,.0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
-		std::vector<double> frameTrans2 = rtde_c.poseTrans(frame, {.0, .1, .0, .0,-pi,.0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
-		std::vector<double> frameTrans3 = rtde_c.poseTrans(frame, {.0, .0, .0, .0,-pi,.0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
+		std::vector<double> frameTrans1 = rtde_c.poseTrans(frame, {.1, .0, .0, (pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
+		std::vector<double> frameTrans2 = rtde_c.poseTrans(frame, {.0, .1, .0, (pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
+		std::vector<double> frameTrans3 = rtde_c.poseTrans(frame, {.0, .0, .0, (pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
+		std::vector<double> frameTrans4 = rtde_c.poseTrans(frame, {.0, .0, .1, (pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
 		
 		frameTrans1.insert(frameTrans1.end(), {_velocity, _acceleration, _blend});
 		frameTrans2.insert(frameTrans2.end(), {_velocity, _acceleration, _blend});
 		frameTrans3.insert(frameTrans3.end(), {_velocity, _acceleration, _blend});
+		frameTrans4.insert(frameTrans4.end(), {_velocity, _acceleration, _blend});
 
 		std::vector<std::vector<double>> path;
 		path.push_back(frameTrans3);
 		path.push_back(frameTrans1);
 		path.push_back(frameTrans3);
 		path.push_back(frameTrans2);
+		path.push_back(frameTrans3);
+		path.push_back(frameTrans4);
 		path.push_back(frameTrans3);
 		
 		// Send a linear path with blending in between - (currently uses separate script)

@@ -14,7 +14,8 @@ class Kinematic {
 		std::vector<double> _yPoint;
 		std::vector<double> _frame;
 		std::vector<double> crossProduct(std::vector<double> u, std::vector<double> v);
-		std::vector<double> normalize(std::vector<double> p);
+		//std::vector<double> normalize(std::vector<double> p);
+		double normalize(std::vector<double> p);
 		std::vector<double> rotmat2rotvec(std::vector<double> rotmat);
 		void createFrame();
 		double d2r(double degree);

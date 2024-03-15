@@ -13,11 +13,11 @@ std::vector<double> Kinematic::getFrame() {
 }
 
 
-std::vector<double> Kinematic::normalize(std::vector<double> p) {
+double Kinematic::normalize(std::vector<double> p) {
 	double w = sqrt( p[0] * p[0] + p[1] * p[1] + p[2] * p[2] );
-	p[0] /= w;
-	p[1] /= w;
-	p[2] /= w;
+	//p[0] /= w;
+	//p[1] /= w;
+	//p[2] /= w;
 	
 	/*
 	for (int i = 0; i < p.size(); i++) {
@@ -25,7 +25,7 @@ std::vector<double> Kinematic::normalize(std::vector<double> p) {
 	}
 	*/
 	
-	return p;
+	return w;
 }
 
 std::vector<double> Kinematic::crossProduct(std::vector<double> u, std::vector<double> v) { 
@@ -73,22 +73,33 @@ std::vector<double> Kinematic::rotmat2rotvec(std::vector<double> rotmat) {
 	
 	if ( (theta > d2r(179.99)) || (theta < d2r(-179.99)) ) {
 		theta = d2r(180);
+		
+		std::cout << "theta = " << theta/pi * 180 << std::endl;
 		if (r21 < 0) {
+		
+			std::cout << "r21 < 0" << std::endl;
 			if (r31 < 0) {
+				std::cout << "r31 < 0 ----- 1" << std::endl;
 				ux = sqrt((r11+1)/2);
 				uy = -sqrt((r22+1)/2);
 				uz = -sqrt((r33+1)/2);
 			} else {
+				std::cout << "r31 >= 0 ----- 1" << std::endl;
 				ux = sqrt((r11+1)/2);
 				uy = -sqrt((r22+1)/2);
 				uz = sqrt((r33+1)/2);
 			}
 		} else {
+		
+			std::cout << "r21 >==== 0" << std::endl;
 			if (r31 < 0){
+				std::cout << "r31 < 0 ----- 2" << std::endl;
 				ux = sqrt((r11+1)/2);
 				uy = sqrt((r22+1)/2);
 				uz = -sqrt((r33+1)/2);
 			} else{
+			
+				std::cout << "r31 >= 0 ------ 2" << std::endl;
 				ux = sqrt((r11+1)/2);
 				uy = sqrt((r22+1)/2);
 				uz = sqrt((r33+1)/2);
@@ -96,10 +107,16 @@ std::vector<double> Kinematic::rotmat2rotvec(std::vector<double> rotmat) {
 		}
 	}
 	else {
+		std::cout << " else theta" << std::endl;
 		ux = (r32-r23)/(2*sth);
 		uy = (r13-r31)/(2*sth);
 		uz = (r21-r12)/(2*sth);
 	}
+	std::cout << "------" << std::endl;
+	std::cout << "ux = " << ux << std::endl;
+	std::cout << "uy = " << uy << std::endl;
+	std::cout << "uz = " << uz << std::endl;
+	std::cout << "------" << std::endl;
 	
 	std::vector<double> rotvec = {(theta*ux),(theta*uy),(theta*uz)};
 
@@ -133,15 +150,18 @@ void Kinematic::createFrame() {
 	std::cout << "------" << std::endl;
 	
 	// Step 3. Get the X and Z unit direction vectors by normalizing d12 and dz
-	std::vector<double> temp = normalize(d12);
-	
+	//std::vector<double> temp = normalize(d12);
+	double temp = normalize(d12);
+	std::cout << "temp= " << temp << std::endl;
+	/*
 	for (int i = 0; i < temp.size(); i++) {
 		std::cout << "temp= " << temp[i] << std::endl;
 	}
-	
+	*/
 	std::cout << "------" << std::endl;
 	
-	std::vector<double> ux = { d12[0]/temp[0], d12[1]/temp[0], d12[2]/temp[0] };
+	//std::vector<double> ux = { d12[0]/temp[0], d12[1]/temp[0], d12[2]/temp[0] };
+	std::vector<double> ux = { d12[0]/temp, d12[1]/temp, d12[2]/temp };
 	
 	for (int i = 0; i < ux.size(); i++) {
 		std::cout << "ux= " << ux[i] << std::endl;
@@ -149,13 +169,16 @@ void Kinematic::createFrame() {
 	std::cout << "------" << std::endl;
 	
 	temp = normalize(dz);
-	
+	std::cout << "temp= " << temp << std::endl;
+	/*
 	for (int i = 0; i < temp.size(); i++) {
 		std::cout << "norm temp dz= " << temp[i] << std::endl;
 	}
+	*/
 	std::cout << "------" << std::endl;
 	
-	std::vector<double> uz = { dz[0]/temp[2], dz[1]/temp[2], dz[2]/temp[2] };
+	//std::vector<double> uz = { dz[0]/temp[2], dz[1]/temp[2], dz[2]/temp[2] };
+	std::vector<double> uz = { dz[0]/temp, dz[1]/temp, dz[2]/temp };
 	
 	for (int i = 0; i < uz.size(); i++) {
 		std::cout << "uz= " << uz[i] << std::endl;
@@ -183,7 +206,10 @@ void Kinematic::createFrame() {
 	
 	// Step 6. Get the rotation vector from the rotation matrix
 	std::vector<double> rotvec = rotmat2rotvec(rotmat);
-	
+	for (int i = 0; i < rotvec.size(); i++) {
+		std::cout << "rotvec= " << rotvec[i] << std::endl;
+	}
+	std::cout << "------" << std::endl;
 	// Step 7. Get the feature plane with the origin at p1 and the frame achieved at step 6
 	_frame = {_initPoint[0], _initPoint[1], _initPoint[2], rotvec[0], rotvec[1], rotvec[2] };
 }

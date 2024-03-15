@@ -19,6 +19,9 @@ public:
 	//Send signal til MC der åbner gribbern
 	//brug requestdata() til at se hvornår den er lukket (Motor amp) 
 	
+	void isGripping();
+	//istedet for request data???
+	
 
 };
 

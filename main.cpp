@@ -15,8 +15,9 @@ int main(int argc, char* argv[]) {
 	//a = rc.readFrame();
 	//rc.gameControl();
 	//rc.moveTrans();
-	rc.forceDown(10);
-
+	//rc.forceDown(10);
+	std::vector<double> a = {.20, -.10, .20};
+	rc.move(a);
 
 
 	/*

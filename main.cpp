@@ -8,7 +8,7 @@
 
 int main(int argc, char* argv[]) {
 
-	Robot_control rc("192.168.1.54");
+	//Robot_control rc("192.168.1.54");
 	//rc.createFrame();
 	//std::vector<double> a = {-1.54, -1.83, -2.28, -0.59, 1.60, 0.023};
 	//rc.writeFrame(a);
@@ -16,10 +16,18 @@ int main(int argc, char* argv[]) {
 	//rc.gameControl();
 	//rc.moveTrans();
 	//rc.forceDown(10);
-	std::vector<double> a = {.20, -.10, .20};
-	rc.move(a);
+	//std::vector<double> a = {.20, -.10, .20};
+	//rc.move(a);
 
-
+	std::vector<double> ainit= {-0.143, -0.435, 0.20, -0.001, 3.12, 0.04};
+	std::vector<double> axp = {-0.743, -0.435, 0.20, -0.001, 3.12, 0.04};
+	std::vector<double> ayp = {-0.743, -0.235, 0.20, -0.001, 3.12, 0.04};
+	Kinematic kin(ainit, axp, ayp);
+	std::vector<double> t = kin.createFrame();
+	
+	for ( const double d : t ) {
+		std::cout << "t = " << d << std::endl;
+	}
 	/*
 	while (rtde.getActualTCPForce() < 60 ) {
 	rtde.speedL({0,0,-.005,0,0,0});

@@ -80,9 +80,10 @@ void Robot_control::createFrame() {
 		std::cout << i << std::endl;
 	}
 	
+	// mangler en måde at stoppe lortet, hvis man kommer til at trykke fejlagtigt 
 	
 	Kinematic kin(init, xp, yp);
-	std::vector<double> feat = kin.getFrame();
+	std::vector<double> feat = kin.createFrame();
 	writeFrame(feat);
 	std::cout << "\n--Frame--" << std::endl;
 	

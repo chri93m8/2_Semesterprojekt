@@ -5,12 +5,12 @@ Kinematic::Kinematic(std::vector<double> init, std::vector<double> x, std::vecto
 	_xPoint = x;
 	_yPoint = y;
 };
-
+/*
 std::vector<double> Kinematic::getFrame() {
 	createFrame();
 	return _frame;
 }
-
+*/
 double Kinematic::normalize(std::vector<double> p) {
 	return ( sqrt( p[0] * p[0] + p[1] * p[1] + p[2] * p[2] ) );
 }
@@ -74,7 +74,7 @@ std::vector<double> Kinematic::rotmat2rotvec(std::vector<double> rotmat) {
 				ux = sqrt((r11+1)/2);
 				uy = sqrt((r22+1)/2);
 				uz = sqrt((r33+1)/2);
-			}
+			}	
 		}
 	}
 	else {
@@ -87,7 +87,7 @@ std::vector<double> Kinematic::rotmat2rotvec(std::vector<double> rotmat) {
 	return rotvec;
 }
 	
-void Kinematic::createFrame() {
+std::vector<double> Kinematic::createFrame() {
 
 	// Step 1. Get the direction vectors
 	std::vector<double> d12 = { _xPoint[0] - _initPoint[0], _xPoint[1] - _initPoint[1], _xPoint[2] - _initPoint[2] };
@@ -99,7 +99,6 @@ void Kinematic::createFrame() {
 	// Step 3. Get the X and Z unit direction vectors by normalizing d12 and dz
 	double temp = normalize(d12);
 	std::vector<double> ux = { d12[0]/temp, d12[1]/temp, d12[2]/temp };
-	
 	temp = normalize(dz);
 	std::vector<double> uz = { dz[0]/temp, dz[1]/temp, dz[2]/temp };
 		
@@ -113,5 +112,7 @@ void Kinematic::createFrame() {
 	std::vector<double> rotvec = rotmat2rotvec(rotmat);
 
 	// Step 7. Get the feature plane with the origin at p1 and the frame achieved at step 6
-	_frame = {_initPoint[0], _initPoint[1], _initPoint[2], rotvec[0], rotvec[1], rotvec[2] };
+	//_frame = {_initPoint[0], _initPoint[1], _initPoint[2], rotvec[0], rotvec[1], rotvec[2] };
+	return {_initPoint[0], _initPoint[1], _initPoint[2], rotvec[0], rotvec[1], rotvec[2] };
+	
 }

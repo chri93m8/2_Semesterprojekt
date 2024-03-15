@@ -1,20 +1,35 @@
-//#include <ur_rtde/rtde_control_interface.h>
+#include <ur_rtde/rtde_control_interface.h>
 //#include <ur_rtde/rtde_receive_interface.h>
 //#include <thread>
 //#include <chrono>
 #include "robot_control.h"
 #include "kinematic.h"
 #include <vector>
+#include "game_control.h"
 
 int main(int argc, char* argv[]) {
 
-	Robot_control rc("192.168.1.54");
+	std::cout<<"hej" << std::endl;
+	
+	//ur_rtde::RTDEControlInterface rtde_control("192.168.1.54");
+	
+	 
+	
+	Game_Control gc("192.168.1.54");
+	gc.home();
+	std::cout<<"hej" << std::endl;
+	//gc.home();
+	
+	
+	//Robot_control rc("192.168.1.54");
 	//rc.createFrame();
 	//std::vector<double> a = {-1.54, -1.83, -2.28, -0.59, 1.60, 0.023};
 	//rc.writeFrame(a);
 	//a = rc.readFrame();
-	rc.gameControl();
+	//rc.gameControl();
 	//rc.moveTrans();
+	
+	
 
 
 

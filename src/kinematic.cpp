@@ -16,7 +16,6 @@ double Kinematic::normalize(std::vector<double> p) {
 }
 
 std::vector<double> Kinematic::crossProduct(std::vector<double> u, std::vector<double> v) { 
-	
 	double u1 = u[0];
 	double u2 = u[1];
 	double u3 = u[2];
@@ -26,7 +25,6 @@ std::vector<double> Kinematic::crossProduct(std::vector<double> u, std::vector<d
 	std::vector<double> s = { (u2*v3-u3*v2), (u3*v1-u1*v3), (u1*v2-u2*v1) };
 	
 	return s;
-
 }
 
 double Kinematic::d2r(double degree) {
@@ -83,12 +81,10 @@ std::vector<double> Kinematic::rotmat2rotvec(std::vector<double> rotmat) {
 		uz = (r21-r12)/(2*sth);
 	}
 	std::vector<double> rotvec = {(theta*ux),(theta*uy),(theta*uz)};
-
 	return rotvec;
 }
 	
 std::vector<double> Kinematic::createFrame() {
-
 	// Step 1. Get the direction vectors
 	std::vector<double> d12 = { _xPoint[0] - _initPoint[0], _xPoint[1] - _initPoint[1], _xPoint[2] - _initPoint[2] };
 	std::vector<double> d13 = { _yPoint[0] - _initPoint[0], _yPoint[1] - _initPoint[1], _yPoint[2] - _initPoint[2] };
@@ -113,6 +109,5 @@ std::vector<double> Kinematic::createFrame() {
 
 	// Step 7. Get the feature plane with the origin at p1 and the frame achieved at step 6
 	//_frame = {_initPoint[0], _initPoint[1], _initPoint[2], rotvec[0], rotvec[1], rotvec[2] };
-	return {_initPoint[0], _initPoint[1], _initPoint[2], rotvec[0], rotvec[1], rotvec[2] };
-	
+	return {_initPoint[0], _initPoint[1], _initPoint[2], rotvec[0], rotvec[1], rotvec[2] };	
 }

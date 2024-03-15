@@ -1,6 +1,9 @@
-CMakeFiles/main.dir/main.cpp.o: \
- /home/lina/Workspace/2_Semesterprojekt/main.cpp \
- /usr/include/stdc-predef.h /usr/include/ur_rtde/rtde_control_interface.h \
+CMakeFiles/main.dir/src/game_control.cpp.o: \
+ /home/lina/Workspace/2_Semesterprojekt/src/game_control.cpp \
+ /usr/include/stdc-predef.h \
+ /home/lina/Workspace/2_Semesterprojekt/include/game_control.h \
+ /home/lina/Workspace/2_Semesterprojekt/include/robot_control.h \
+ /usr/include/ur_rtde/rtde_control_interface.h \
  /usr/include/ur_rtde/rtde.h /usr/include/ur_rtde/rtde_export.h \
  /usr/include/boost/asio/io_service.hpp \
  /usr/include/boost/asio/io_context.hpp \
@@ -818,7 +821,6 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
  /usr/include/c++/11/bits/fstream.tcc /usr/include/urcl/script_sender.h \
  /usr/include/urcl/server.h /usr/include/urcl/tcp_socket.h \
- /home/lina/Workspace/2_Semesterprojekt/include/robot_control.h \
  /usr/include/ur_rtde/rtde_receive_interface.h \
  /usr/include/ur_rtde/robot_state.h /usr/include/boost/variant.hpp \
  /usr/include/boost/variant/variant.hpp /usr/include/boost/type_index.hpp \
@@ -1069,8 +1071,4 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/boost/variant/detail/element_index.hpp \
  /usr/include/boost/type_traits/add_pointer.hpp \
  /usr/include/boost/variant/visitor_ptr.hpp \
- /usr/include/boost/variant/bad_visit.hpp \
- /home/lina/Workspace/2_Semesterprojekt/include/kinematic.h \
- /usr/include/c++/11/math.h \
- /home/lina/Workspace/2_Semesterprojekt/include/game_control.h \
- /home/lina/Workspace/2_Semesterprojekt/include/robot_control.h
+ /usr/include/boost/variant/bad_visit.hpp

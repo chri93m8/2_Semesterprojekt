@@ -16,7 +16,6 @@ class Robot_control {
 		double _acceleration = 0.15;
 		double _blend = 0.0;
 		const double pi = std::acos(-1);
-
 	public:
 		Robot_control(std::string ip);
 		void connect();

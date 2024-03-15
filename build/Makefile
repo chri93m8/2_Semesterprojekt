@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/morten/Workspace/2_Semesterprojekt
+CMAKE_SOURCE_DIR = /home/lina/Workspace/2_Semesterprojekt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/morten/Workspace/2_Semesterprojekt/build
+CMAKE_BINARY_DIR = /home/lina/Workspace/2_Semesterprojekt/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/morten/Workspace/2_Semesterprojekt/build/CMakeFiles /home/morten/Workspace/2_Semesterprojekt/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lina/Workspace/2_Semesterprojekt/build/CMakeFiles /home/lina/Workspace/2_Semesterprojekt/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/morten/Workspace/2_Semesterprojekt/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lina/Workspace/2_Semesterprojekt/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/game_control.o: src/game_control.cpp.o
+.PHONY : src/game_control.o
+
+# target to build an object file
+src/game_control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/game_control.cpp.o
+.PHONY : src/game_control.cpp.o
+
+src/game_control.i: src/game_control.cpp.i
+.PHONY : src/game_control.i
+
+# target to preprocess a source file
+src/game_control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/game_control.cpp.i
+.PHONY : src/game_control.cpp.i
+
+src/game_control.s: src/game_control.cpp.s
+.PHONY : src/game_control.s
+
+# target to generate assembly for a file
+src/game_control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/game_control.cpp.s
+.PHONY : src/game_control.cpp.s
+
 src/kinematic.o: src/kinematic.cpp.o
 .PHONY : src/kinematic.o
 
@@ -213,6 +237,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/game_control.o"
+	@echo "... src/game_control.i"
+	@echo "... src/game_control.s"
 	@echo "... src/kinematic.o"
 	@echo "... src/kinematic.i"
 	@echo "... src/kinematic.s"

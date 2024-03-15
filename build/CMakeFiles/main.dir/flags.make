@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_ATOMIC_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DBOOST_THREAD_DYN_LINK
 
-CXX_INCLUDES = -I/home/morten/Workspace/2_Semesterprojekt/include -I/home/morten/Workspace/2_Semesterprojekt/src -I/home/morten/Workspace/2_Semesterprojekt/microcontroller
+CXX_INCLUDES = -I/home/lina/Workspace/2_Semesterprojekt/include -I/home/lina/Workspace/2_Semesterprojekt/src -I/home/lina/Workspace/2_Semesterprojekt/microcontroller
 
 CXX_FLAGS = -std=gnu++11
 

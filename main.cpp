@@ -8,6 +8,7 @@
 
 int main(int argc, char* argv[]) {
 
+	// git cunt
 	//Robot_control rc("192.168.1.54");
 	//rc.createFrame();
 	//std::vector<double> a = {-1.54, -1.83, -2.28, -0.59, 1.60, 0.023};

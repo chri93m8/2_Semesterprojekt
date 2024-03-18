@@ -10,6 +10,7 @@ int main(int argc, char* argv[]) {
 //cunt
 
 
+	// dav på linje 13
 	//dav dav på lunje 13
 	//Robot_control rc("192.168.1.54");
 	//rc.createFrame();

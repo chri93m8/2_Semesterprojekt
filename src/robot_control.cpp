@@ -79,19 +79,22 @@ void Robot_control::createFrame() {
 	for (double i : yp) {
 		std::cout << i << std::endl;
 	}
-	
+	char tmp;
 	// mangler en måde at stoppe lortet, hvis man kommer til at trykke fejlagtigt 
-	
-	Kinematic kin(init, xp, yp);
-	std::vector<double> feat = kin.createFrame();
-	writeFrame(feat);
-	std::cout << "\n--Frame--" << std::endl;
-	
-	for (double c : feat) {
-		std::cout << c << std::endl;
+	std::cout << "Save changes? y/n" << std::endl;
+	std::cin >> tmp;
+	if ( tmp == 'y' ) {
+		Kinematic kin(init, xp, yp);
+		std::vector<double> feat = kin.createFrame();
+		writeFrame(feat);
+
+		std::cout << "\n--Frame--" << std::endl;
+		for (double c : feat) {
+			std::cout << c << std::endl;
+		}
+		std::cout << "------" << std::endl;
 	}
 	
-	std::cout << "------" << std::endl;
 	// ----------------------------------------------------------------------------------------------------
 	/*
 	init.insert(init.end(), {_velocity, _acceleration, _blend});

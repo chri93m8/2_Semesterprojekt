@@ -7,6 +7,7 @@
 #include <vector>
 
 int main(int argc, char* argv[]) {
+//cunt
 
 	// git cunt
 	//Robot_control rc("192.168.1.54");

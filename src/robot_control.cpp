@@ -1,19 +1,20 @@
 #include "robot_control.h"
 #include "kinematic.h"
-#include <chrono>
 
-Robot_control::Robot_control(std::string ip) : _ip(ip), rtde_c(ip), rtde_r(ip)  {
-	_ip = ip;
+Robot_control::Robot_control(std::string ip) : rtde_c(ip), rtde_r(ip)  {
 	_isFrameCreated = readFrame(); 
+
+	setRotvec({-d2r(90), .0, .0}); // hvor fuck skal den her ligge+?!?!?!
+}
+
+double Robot_control::d2r(double degree) {
+	return degree * pi / 180;
 }
 
 bool Robot_control::isFrameCreated() {
 	return _isFrameCreated;
 }
 
-std::string Robot_control::getIp() {
-	return _ip;
-}
 
 std::vector<double> Robot_control::getPose(){
 	return rtde_r.getActualTCPPose();
@@ -30,7 +31,7 @@ void Robot_control::gameControl() {
 	std::cin >> input;
 	switch(input) {
 		case 1:
-			//createFrame();
+			createFrame();
 			break;
 		case 2:
 			printFrame();
@@ -42,7 +43,7 @@ void Robot_control::gameControl() {
 			for ( const double d : getPose() ) {
 				std::cout << d/pi*180 << ", ";
 			}
-			std::cout << std::endl;	
+			std::cout << std::endl;				
 			break;
 		default:
 			std::cout << "heste" << std::endl;
@@ -109,19 +110,48 @@ void Robot_control::moveTrans() {
 		//std::vector<double> frameTrans1 = rtde_c.poseTrans(frame, {.1/*-0.0767*/, /*-.0223*/.0, .0,.0/* (pi*22.3/180)*/, pi, .0});	
 		//std::vector<double> frameTrans2 = rtde_c.poseTrans(frame, {.0, .1, .0, .0/* (pi*22.3/180)*/, pi, .0});	
 		//std::vector<double> frameTrans3 = rtde_c.poseTrans(frame, {.0, .0, .0, .0/* (pi*22.3/180)*/, pi, .0});	
+		std::vector<double> frameTrans1 = rtde_c.poseTrans(frame, {.1, .0, .3, -d2r(90), .0, .0}); //(pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
+		std::vector<double> frameTrans2 = rtde_c.poseTrans(frame, {.0, .1, .3, -d2r(90), .0, .0});//(pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
+		std::vector<double> frameTrans3 = rtde_c.poseTrans(frame, {.0, .0, .3, -d2r(90), .0, .0});//(pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
+		std::vector<double> frameTrans4 = rtde_c.poseTrans(frame, {.0, .0, .4, -d2r(90), .0, .0});//(pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
 		
-		std::vector<double> frameTrans1 = rtde_c.poseTrans(frame, {.1, .0, .0, (pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
-		std::vector<double> frameTrans2 = rtde_c.poseTrans(frame, {.0, .1, .0, (pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
-		std::vector<double> frameTrans3 = rtde_c.poseTrans(frame, {.0, .0, .0, (pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
-		std::vector<double> frameTrans4 = rtde_c.poseTrans(frame, {.0, .0, .1, (pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
+		std::vector<double> frameTrans5 = rtde_c.poseTrans(frame, {.0, .0, .3, -d2r(90), .0, .0 });
+		/*
 		
-		std::vector<double> frameTrans5 = rtde_c.poseTrans(frame, {.0, .0, .1, -(pi*90/180), .0, (pi*5/180)});//(pi*90/180), (pi*17/180), (pi*17/180)});	
+		std::vector<double> frameTrans1 = {.1, .0, .3};	
+		std::vector<double> frameTrans2 = {.0, .1, .3};
+		std::vector<double> frameTrans3 = {.0, .0, .3};
+		std::vector<double> frameTrans4 = {.0, .0, .4};
 		
+		std::vector<double> frameTrans5 = {.0, .0, .3};
+		
+		setRotvec({-d2r(90), .0, .0});
+		
+		insertRotvec(frameTrans1);
+		insertRotvec(frameTrans2);
+		insertRotvec(frameTrans3);
+		insertRotvec(frameTrans4);
+		insertRotvec(frameTrans5);
+		
+		for ( const double dd : frameTrans1 ) {
+			std::cout << "dd = " << dd << std::endl;
+		}
+		*/
+		/*
+		frameTrans1 = rtde_c.poseTrans(frame, frameTrans1);	
+		frameTrans2 = rtde_c.poseTrans(frame, frameTrans2);
+		frameTrans3 = rtde_c.poseTrans(frame, frameTrans3);
+		frameTrans4 = rtde_c.poseTrans(frame, frameTrans4);
+		
+		frameTrans5 = rtde_c.poseTrans(frame, frameTrans5);
+		*/
 		insertAddons(frameTrans1);
 		insertAddons(frameTrans2);
 		insertAddons(frameTrans3);
 		insertAddons(frameTrans4);
 		insertAddons(frameTrans5);
+			
+		
 		
 		//frameTrans1.insert(frameTrans1.end(), {_velocity, _acceleration, _blend});
 		//frameTrans2.insert(frameTrans2.end(), {_velocity, _acceleration, _blend});
@@ -131,23 +161,68 @@ void Robot_control::moveTrans() {
 
 		std::vector<std::vector<double>> path;
 		//path.push_back(frameTrans3);
-		path.push_back(frameTrans5);
-		
 		/*
+		path.push_back(frameTrans5);
+		*/
+				
+		path.push_back(frameTrans3);
 		path.push_back(frameTrans1);
 		path.push_back(frameTrans3);
 		path.push_back(frameTrans2);
 		path.push_back(frameTrans3);
 		path.push_back(frameTrans4);
 		path.push_back(frameTrans3);
-		*/
 		// Send a linear path with blending in between - (currently uses separate script)
 	  	rtde_c.moveL(path);
 		// Stop the RTDE control script
-		rtde_c.stopScript();
+		//rtde_c.stopScript();
 		
 	}
 }
+
+void Robot_control::move(std::vector<double> v) {
+	if ( isFrameCreated() ) {
+		insertRotvec(v);
+		std::vector<double> x = rtde_c.poseTrans(getFrame(), v);
+		rtde_c.moveL(x, _velocity, _acceleration, async);
+		rtde_c.stopL();
+	}
+}
+
+
+bool Robot_control::forceDown(int maxHeight) { // kører -> finde disk -> stop movement -> return
+	std::vector<double> joint_speed = {0.0, 0.0, -0.05, 0.0, 0.0, 0.0};
+	double startHeight = rtde_r.getActualTCPPose()[2];
+	double newHeight;
+	while (rtde_r.getActualTCPForce()[2] < 20 ) {
+    		std::chrono::steady_clock::time_point t_start = rtde_c.initPeriod();
+		std::cout << "Force: " << rtde_r.getActualTCPForce()[2] << std::endl;
+		newHeight = startHeight - rtde_r.getActualTCPPose()[2];
+		std::cout << "newHeight: " << newHeight << std::endl;
+		rtde_c.speedL(joint_speed, _acceleration);
+    		
+    		rtde_c.waitPeriod(t_start);
+		// hvis den når en distance
+		if ( ( newHeight * 100 )  >= maxHeight ) {
+			rtde_c.speedStop();
+			rtde_c.stopScript();
+			return false;
+		}
+	}
+	rtde_c.speedStop();
+	rtde_c.stopScript();
+	return true;
+}
+
+
+
+
+
+
+
+
+
+
 
 void Robot_control::insertAddons(std::vector<double> &v) {
 	v.insert(v.end(), {_velocity, _acceleration, _blend});
@@ -167,87 +242,6 @@ void Robot_control::setRotvec(std::vector<double> v) {
 std::vector<double> Robot_control::getRotvec() {
 	return _rotvec;
 }
-
-void Robot_control::move(std::vector<double> &v) {
-
-	setRotvec({(pi*18/180), (pi*100/180), -(pi*85/180)});
-	insertRotvec(v);
-	
-	
-	std::vector<double> x = rtde_c.poseTrans(getFrame(), v);
-	
-	insertAddons(x);
-	
-	for (const double d : x ) {
-		std::cout << d << " "; 
-	}
-	std::cout << std::endl;
-	
-	std::vector<std::vector<double>> path;
-	path.push_back(x);
-	// Send a linear path with blending in between - (currently uses separate script)
-	rtde_c.moveL(path);
-	// Stop the RTDE control script
-	rtde_c.stopScript();
-	
-}
-
-
-void Robot_control::home(std::vector<double> &v) {
-	if (isFrameCreated()) {
-		std::cout << "frame is created" << std::endl;
-		
-	}
-
-}
-
-bool Robot_control::forceDown(int maxHeight) { // kører -> finde disk -> stop movement -> return
-	std::vector<double> joint_speed = {0.0, 0.0, -0.05, 0.0, 0.0, 0.0};
-	double startHeight = rtde_r.getActualTCPPose()[2];
-	double newHeight;
- 	//double dt = 1.0/500; // 2ms
-	while (rtde_r.getActualTCPForce()[2] < 21 ) {
-		
-    		std::chrono::steady_clock::time_point t_start = rtde_c.initPeriod();
-		std::cout << "Force: " << rtde_r.getActualTCPForce()[2] << std::endl;
-		newHeight = startHeight - rtde_r.getActualTCPPose()[2];
-		std::cout << "newHeight: " << newHeight << std::endl;
-		rtde_c.speedL(joint_speed, _acceleration);
-    		//joint_speed[2] -= 0.05;
-    		
-    		rtde_c.waitPeriod(t_start);
-		// hvis den når en distance
-		if ( ( newHeight * 100 )  >= maxHeight ) {
-			rtde_c.speedStop();
-			rtde_c.stopScript();
-			return false;
-		}
-		
-	}
-	rtde_c.speedStop();
-	rtde_c.stopScript();
-	return true;
-	/*
-	for (int i = 0; i < 10; i++) {
-	  	std::cout << "\n";
-  		std::cin.ignore();
-		std::vector<double> a = rtde_r.getActualTCPForce();
-		
-		for ( const double d : a ) {
-			std::cout << "force = " << d << std::endl;
-		}
-		std::cout << std::endl;
-	}
-	*/
-}
-
-
-
-
-
-
-
-
 
 
 void Robot_control::printFrame() {

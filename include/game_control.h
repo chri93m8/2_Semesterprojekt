@@ -15,10 +15,10 @@ class Game_Control{
 		//enum Board
 			//50x40
 		
-		struct Discs{ 
+		struct { 
 			int discHeight;
 			int value;
-			int size;
+			int size; //modstand ??
 			bool isSorted = false;
 			
 		
@@ -65,6 +65,7 @@ class Game_Control{
 	public:
 		Game_Control(std::string ip);
 		void home();
+		//robot_control.move(homing pos)
 		//snakker til UR -- burde være robot_control method??
 		void discDistribution(); // counter funktion
 		int findDisc(); 

@@ -14,19 +14,33 @@ class Game_Control{
 		
 		//enum Board
 			//50x40
-		/*
-		struct discs { 
-			int discHeight;
-			enum disc1 = {int value = 1, bool isSorted = false, int size = 0.08 };
-			enum disc2 = {int value = 2, bool isSorted = false, int size = 0.08 };
-			enum disc3 = {int value = 3, bool isSorted = false, int size = 0.08 };
-			enum disc4 = {int value = 4, bool isSorted = false, int size = 0.08 };
-			enum disc5 = {int value = 5, bool isSorted = false, int size = 0.08 };	
-					
-			//pre-sets til disc "modstand"???
 		
-		};
-		*/
+		struct Discs{ 
+			int discHeight;
+			int value;
+			int size;
+			bool isSorted = false;
+			
+		
+		}Disc1, Disc2, Disc3, Disc4, Disc5;
+		
+		Disc1.value = 1;
+		Disc1.size = 0.08;
+		
+		Disc2.value = 2;
+		Disc2.size = 0.08;
+		
+		Disc3.value = 3;
+		Disc3.size = 0.08;
+		
+		Disc4.value = 4;
+		Disc4.size = 0.08;
+		
+		Disc5.value = 5;
+		Disc5.size = 0.08;
+		
+		//rodstate tæller
+		
 			
 		//rod presets {x, y, z, rx, ry, rz} !!!!evt fjern rotationsvektorerne
 		

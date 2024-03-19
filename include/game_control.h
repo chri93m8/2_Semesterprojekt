@@ -16,13 +16,15 @@ class Game_Control{
 			//50x40
 		
 		struct { 
-			int discHeight;
+			int discHeight; //universal??
 			int value;
-			int size;
+			int size; // afhængig af modstand ??
 			bool isSorted = false;
 			
 		
 		}Disc1, Disc2, Disc3, Disc4, Disc5;
+		
+		
 		/*
 		Disc1.value = 1;
 		Disc1.size = 0.08;
@@ -39,7 +41,9 @@ class Game_Control{
 		Disc5.value = 5;
 		Disc5.size = 0.08;
 		*/
-		//rodstate tæller
+		
+		
+		//int rodstate = 0; //tæller hvor langt vi er nået med sorting
 		
 			
 		//rod presets {x, y, z, rx, ry, rz} !!!!evt fjern rotationsvektorerne
@@ -65,6 +69,7 @@ class Game_Control{
 	public:
 		Game_Control(std::string ip);
 		void home();
+		//robot_control.move(homing pos)
 		//snakker til UR -- burde være robot_control method??
 		void discDistribution(); // counter funktion
 		int findDisc(); 

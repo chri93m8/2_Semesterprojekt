@@ -10,22 +10,25 @@ void Game_Control::home(){
 
 	rc.printFrame();
 
-	//rc.home(&homeVec, speed, acceleration);
+	//rc.move(&homeVec, speed, acceleration);
 }
 
 void Game_Control::discDistribution(){
-	/*
-	for(int i = 0; i<5; i++){
-		
-		disc = findDisc();
-		if(disc = largest){
-			discSorting(disc);
-			//hvordan gemmer jeg hvilke discs er sorteret smart???
-		
-		} else{
-			rc.move(discSpaces[disc]);
+/* rodstate er ny counter
+		while(rodstate <=5){
+			disc = findDisc();
+			
+			if(!disc.isSorted){
+				if(rodstate = disc.value-1){ //altså den nuværende disk er den største usorterede disk
+					discSorting(disc);
+				
+				}
+			}else{
+				rc.move(discSpaces[disc]);
+			}
 		}
-	}
+		
+	
 	*/
 }
 
@@ -56,7 +59,8 @@ int Game_Control::findDisc(){
 
 void Game_Control::discSorting(int disc){ //pass by reference??
 
-	//counter??  //hvordan gemmer jeg hvilke discs er sorteret smart???
+	//disc.isSorted = true;
+	//rodstate++; 
 	
 	//rc.move til home pos
 	//if mic_control.isGripping() = true

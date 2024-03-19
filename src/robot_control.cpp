@@ -94,23 +94,7 @@ void Robot_control::createFrame() {
 		}
 		std::cout << "------" << std::endl;
 	}
-	
 	// ----------------------------------------------------------------------------------------------------
-	/*
-	init.insert(init.end(), {_velocity, _acceleration, _blend});
-	xp.insert(xp.end(), {_velocity, _acceleration, _blend});
-	yp.insert(yp.end(), {_velocity, _acceleration, _blend});
-
-	std::vector<std::vector<double>> path;
-	path.push_back(init);
-	path.push_back(xp);
-	path.push_back(yp);
-
-	// Send a linear path with blending in between - (currently uses separate script)
-  	rtde_c.moveL(path);
-	// Stop the RTDE control script
-	rtde_c.stopScript();
-	*/
 }
 
 bool Robot_control::readFrame() {

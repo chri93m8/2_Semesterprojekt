@@ -3,7 +3,7 @@
 
 #include "robot_control.h"
 #include <vector>
-#include<iostream>
+#include <iostream>
 
 class Game_Control{
 	private:
@@ -15,7 +15,7 @@ class Game_Control{
 		//enum Board
 			//50x40
 		
-		struct Discs{ 
+		struct { 
 			int discHeight;
 			int value;
 			int size;
@@ -23,7 +23,7 @@ class Game_Control{
 			
 		
 		}Disc1, Disc2, Disc3, Disc4, Disc5;
-		
+		/*
 		Disc1.value = 1;
 		Disc1.size = 0.08;
 		
@@ -38,7 +38,7 @@ class Game_Control{
 		
 		Disc5.value = 5;
 		Disc5.size = 0.08;
-		
+		*/
 		//rodstate tæller
 		
 			

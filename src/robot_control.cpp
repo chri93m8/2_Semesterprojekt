@@ -158,7 +158,7 @@ void Robot_control::moveTrans() {
 	}
 }
 
-void Robot_control::move(std::vector<double> v) {
+void Robot_control::move(std::vector<double> v) { // check om koords er inde for rammerne ( 40*50 ) eller noget 
 	if ( isFrameCreated() ) {
 		insertRotvec(v);
 		std::vector<double> x = rtde_c.poseTrans(getFrame(), v);

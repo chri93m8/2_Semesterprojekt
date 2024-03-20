@@ -1,3 +1,3 @@
-/home/lina/Workspace/2_Semesterprojekt/build/CMakeFiles/main.dir
-/home/lina/Workspace/2_Semesterprojekt/build/CMakeFiles/edit_cache.dir
-/home/lina/Workspace/2_Semesterprojekt/build/CMakeFiles/rebuild_cache.dir
+/home/morten/Workspace/2_Semesterprojekt/build/CMakeFiles/main.dir
+/home/morten/Workspace/2_Semesterprojekt/build/CMakeFiles/edit_cache.dir
+/home/morten/Workspace/2_Semesterprojekt/build/CMakeFiles/rebuild_cache.dir

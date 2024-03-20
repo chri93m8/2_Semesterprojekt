@@ -54,54 +54,32 @@ void Robot_control::gameControl() {
 
 void Robot_control::createFrame() {
 
-	std::vector<double> init;//= {-0.143, -0.435, 0.20, -0.001, 3.12, 0.04};
-	std::vector<double> xp;// = {-0.743, -0.435, 0.20, -0.001, 3.12, 0.04};
-	std::vector<double> yp;// = {-0.743, -0.235, 0.20, -0.001, 3.12, 0.04};
+	std::vector<double> init;
+	std::vector<double> xp;
+	std::vector<double> yp;
 	
 	std::cout << "Click Enter when robot is at the right init point";
 	std::cin.ignore();
-	
 	init = getPose();
-	for (double i : init) {
-		std::cout << i << std::endl;
-	}
 	
 	std::cout << "Click Enter when robot is at the right x point";
 	std::cin.ignore();
-	
 	xp = getPose();
-	for (double i : xp) {
-		std::cout << i << std::endl;
-	}
 	
 	std::cout << "Click Enter when robot is at the right y point";
 	std::cin.ignore();
 	yp = getPose();
-	for (double i : yp) {
-		std::cout << i << std::endl;
-	}
+	
 	char tmp;
-	// mangler en måde at stoppe lortet, hvis man kommer til at trykke fejlagtigt 
 	std::cout << "Save changes? y/n" << std::endl;
 	std::cin >> tmp;
 	if ( tmp == 'y' ) {
 		Kinematic kin(init, xp, yp);
 		std::vector<double> feat = kin.createFrame();
 		writeFrame(feat);
-
-		std::cout << "\n--Frame--" << std::endl;
-		for (double c : feat) {
-			std::cout << c << std::endl;
-		}
-		std::cout << "------" << std::endl;
 	}
-	// ----------------------------------------------------------------------------------------------------
 }
 
-bool Robot_control::readFrame() {
-	std::vector<double> a = getFrame();
-	return ( a[0] == 0 && a.size() == 1 ? false : true);
-}
 
 void Robot_control::moveTrans() {
 	
@@ -184,7 +162,7 @@ void Robot_control::move(std::vector<double> v) {
 	if ( isFrameCreated() ) {
 		insertRotvec(v);
 		std::vector<double> x = rtde_c.poseTrans(getFrame(), v);
-		rtde_c.moveL(x, _velocity, _acceleration, async);
+		rtde_c.moveL(x, _velocity, _acceleration, _async);
 		rtde_c.stopL();
 	}
 }
@@ -228,16 +206,13 @@ void Robot_control::insertAddons(std::vector<double> &v) {
 	v.insert(v.end(), {_velocity, _acceleration, _blend});
 }
 
-
 void Robot_control::insertRotvec(std::vector<double> &v) {
 	v.insert(v.end(), {getRotvec()[0], getRotvec()[1], getRotvec()[2]});
-	
 }
 
 void Robot_control::setRotvec(std::vector<double> v) {
 	_rotvec = v;
 }
-
 
 std::vector<double> Robot_control::getRotvec() {
 	return _rotvec;
@@ -250,6 +225,11 @@ void Robot_control::printFrame() {
 			std::cout << i << ' ';
 		}
 	std::cout << std::endl;
+}
+
+bool Robot_control::readFrame() {
+	std::vector<double> a = getFrame();
+	return ( a[0] == 0 && a.size() == 1 ? false : true);
 }
 
 std::vector<double> Robot_control::getFrame(){

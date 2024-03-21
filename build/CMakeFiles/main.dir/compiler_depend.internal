@@ -1179,6 +1179,10 @@ CMakeFiles/main.dir/main.cpp.o
  /usr/include/boost/type_traits/add_pointer.hpp
  /usr/include/boost/variant/visitor_ptr.hpp
  /usr/include/boost/variant/bad_visit.hpp
+ /usr/include/curses.h
+ /usr/include/ncurses_dll.h
+ /usr/include/unctrl.h
+ /usr/include/curses.h
  /home/morten/Workspace/2_Semesterprojekt/include/kinematic.h
  /usr/include/c++/11/math.h
 
@@ -2361,6 +2365,10 @@ CMakeFiles/main.dir/src/game_control.cpp.o
  /usr/include/boost/type_traits/add_pointer.hpp
  /usr/include/boost/variant/visitor_ptr.hpp
  /usr/include/boost/variant/bad_visit.hpp
+ /usr/include/curses.h
+ /usr/include/ncurses_dll.h
+ /usr/include/unctrl.h
+ /usr/include/curses.h
 
 CMakeFiles/main.dir/src/kinematic.cpp.o
  /home/morten/Workspace/2_Semesterprojekt/src/kinematic.cpp
@@ -3740,6 +3748,10 @@ CMakeFiles/main.dir/src/robot_control.cpp.o
  /usr/include/boost/type_traits/add_pointer.hpp
  /usr/include/boost/variant/visitor_ptr.hpp
  /usr/include/boost/variant/bad_visit.hpp
+ /usr/include/curses.h
+ /usr/include/ncurses_dll.h
+ /usr/include/unctrl.h
+ /usr/include/curses.h
  /home/morten/Workspace/2_Semesterprojekt/include/kinematic.h
  /usr/include/c++/11/math.h
 

@@ -1178,6 +1178,10 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/boost/type_traits/add_pointer.hpp \
   /usr/include/boost/variant/visitor_ptr.hpp \
   /usr/include/boost/variant/bad_visit.hpp \
+  /usr/include/curses.h \
+  /usr/include/ncurses_dll.h \
+  /usr/include/unctrl.h \
+  /usr/include/curses.h \
   ../include/kinematic.h \
   /usr/include/c++/11/math.h
 
@@ -2358,7 +2362,11 @@ CMakeFiles/main.dir/src/game_control.cpp.o: ../src/game_control.cpp \
   /usr/include/boost/variant/detail/element_index.hpp \
   /usr/include/boost/type_traits/add_pointer.hpp \
   /usr/include/boost/variant/visitor_ptr.hpp \
-  /usr/include/boost/variant/bad_visit.hpp
+  /usr/include/boost/variant/bad_visit.hpp \
+  /usr/include/curses.h \
+  /usr/include/ncurses_dll.h \
+  /usr/include/unctrl.h \
+  /usr/include/curses.h
 
 CMakeFiles/main.dir/src/kinematic.cpp.o: ../src/kinematic.cpp \
   /usr/include/stdc-predef.h \
@@ -3736,6 +3744,10 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
   /usr/include/boost/type_traits/add_pointer.hpp \
   /usr/include/boost/variant/visitor_ptr.hpp \
   /usr/include/boost/variant/bad_visit.hpp \
+  /usr/include/curses.h \
+  /usr/include/ncurses_dll.h \
+  /usr/include/unctrl.h \
+  /usr/include/curses.h \
   ../include/kinematic.h \
   /usr/include/c++/11/math.h
 
@@ -4213,6 +4225,8 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/boost/preprocessor/enum_shifted_params.hpp:
 
 /usr/include/boost/asio/detail/scoped_ptr.hpp:
+
+/usr/include/curses.h:
 
 /usr/include/x86_64-linux-gnu/bits/socket_type.h:
 
@@ -5670,6 +5684,8 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/boost/mpl/multiplies.hpp:
 
+/usr/include/unctrl.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:
 
 /usr/include/sched.h:
@@ -5739,6 +5755,8 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/boost/asio/ip/address.hpp:
 
 /usr/include/boost/asio/ip/address_v4.hpp:
+
+/usr/include/ncurses_dll.h:
 
 /usr/include/boost/type_traits/is_lvalue_reference.hpp:
 

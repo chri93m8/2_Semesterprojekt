@@ -141,6 +141,8 @@ main: CMakeFiles/main.dir/src/kinematic.cpp.o
 main: CMakeFiles/main.dir/src/game_control.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: /usr/local/lib/librtde.so.1.5.8
+main: /usr/lib/x86_64-linux-gnu/libcurses.so
+main: /usr/lib/x86_64-linux-gnu/libform.so
 main: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.74.0
 main: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.74.0
 main: /usr/lib/x86_64-linux-gnu/libboost_atomic.so.1.74.0

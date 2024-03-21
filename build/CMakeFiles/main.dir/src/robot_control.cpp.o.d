@@ -1073,6 +1073,7 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: \
  /usr/include/boost/variant/detail/element_index.hpp \
  /usr/include/boost/type_traits/add_pointer.hpp \
  /usr/include/boost/variant/visitor_ptr.hpp \
- /usr/include/boost/variant/bad_visit.hpp \
+ /usr/include/boost/variant/bad_visit.hpp /usr/include/curses.h \
+ /usr/include/ncurses_dll.h /usr/include/unctrl.h /usr/include/curses.h \
  /home/morten/Workspace/2_Semesterprojekt/include/kinematic.h \
  /usr/include/c++/11/math.h

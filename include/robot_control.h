@@ -7,11 +7,13 @@
 #include <fstream>
 #include <sstream>
 #include <chrono>
+#include <ncurses.h>
 
 class Robot_control {
 	private:
 		ur_rtde::RTDEReceiveInterface rtde_r;
 		ur_rtde::RTDEControlInterface rtde_c;
+		std::string _ip;
 		double _velocity = 0.25;
 		double _acceleration = 0.2;
 		double _blend = 0.0;
@@ -29,6 +31,7 @@ class Robot_control {
 		bool readFrame();	
 	public:
 		Robot_control(std::string ip);
+		void frameMove();
 		void setRotvec(std::vector<double> v);
 		void createFrame();
 		void gameControl(); // This will be moved into the game_control.h class at a later point

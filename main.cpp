@@ -20,6 +20,9 @@ int main(int argc, char* argv[]) {
 	std::vector<double> frameTrans4 = {.0, .0, .4};
 	std::vector<double> frameTrans5 = {.0, .0, .3};
 	*/
+	//rc.createFrame();
+	rc.frameMove();
+	
 	std::vector<double> rod1 = {0.075, 0.425, 0.35}; //3rd tier
 	std::vector<double> rod2 = {0.200, 0.425, 0.35};
 	std::vector<double> rod3 = {0.325, 0.425, 0.35};
@@ -28,8 +31,9 @@ int main(int argc, char* argv[]) {
 	std::vector<double> discP3 = {0.075, 0.100, 0.10}; // 1st tier
 	std::vector<double> discP4 = {0.200, 0.100, 0.10};
 	std::vector<double> discP5 = {0.325, 0.100, 0.10}; //smallest
-	bool a = true;
+	bool a = false;
 	while (a) {
+	/*
 		a = rc.move(rod1);
 		a = rc.move(rod2);
 		a = rc.move(rod3);
@@ -38,7 +42,7 @@ int main(int argc, char* argv[]) {
 		a = rc.move(discP3);
 		a = rc.move(discP4);
 		a = rc.move(discP5);
-		
+	*/	
 		
 
 	/*

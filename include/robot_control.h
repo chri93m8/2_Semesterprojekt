@@ -16,20 +16,19 @@ class Robot_control {
 		double _acceleration = 0.2;
 		double _blend = 0.0;
 		bool _async = false;
+		std::vector<double> _rotvec;
 		const double pi = std::acos(-1);
 		bool _isFrameCreated; 
 		double d2r(double degree);
-		void insertAddons(std::vector<double> &v);
 		void writeFrame(std::vector<double> &v);
 		void insertRotvec(std::vector<double> &v);
-		std::vector<double> _rotvec;
 		std::vector<double> getRotvec();
 		std::vector<double> getPose();
 		std::vector<double> getFrame();
 		bool readFrame();	
-		void setRotvec(std::vector<double> v);
 	public:
 		Robot_control(std::string ip);
+		void setRotvec(std::vector<double> v);
 		void createFrame();
 		void gameControl(); // This will be moved into the game_control.h class at a later point
 		void printFrame();
@@ -38,7 +37,7 @@ class Robot_control {
 
 		//------ Game_control
 		bool forceDown(int maxHeight = 10); // kører -> finde disk -> stop movement -> return
-		void move(std::vector<double> v);
+		bool move(std::vector<double> v);
 };
 
 #endif //ROBOT_CONTROL_H

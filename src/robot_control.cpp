@@ -19,6 +19,19 @@ std::vector<double> Robot_control::getPose(){
 	return rtde_r.getActualTCPPose();
 }
 
+void Robot_control::insertRotvec(std::vector<double> &v) {
+	v.insert(v.end(), {getRotvec()[0], getRotvec()[1], getRotvec()[2]});
+}
+
+void Robot_control::setRotvec(std::vector<double> v) {
+	_rotvec = v;
+}
+
+std::vector<double> Robot_control::getRotvec() {
+	return _rotvec;
+}
+
+
 void Robot_control::gameControl() {
 	std::cout << "--Menu--" << std::endl;
 	std::cout << "Create new frame, Press 1" << std::endl;
@@ -134,11 +147,6 @@ void Robot_control::moveTrans() {
 		frameTrans4 = rtde_c.poseTrans(frame, frameTrans4);
 		
 		frameTrans5 = rtde_c.poseTrans(frame, frameTrans5);
-		insertAddons(frameTrans1);
-		insertAddons(frameTrans2);
-		insertAddons(frameTrans3);
-		insertAddons(frameTrans4);
-		insertAddons(frameTrans5);
 		*/
 			
 		
@@ -170,13 +178,17 @@ void Robot_control::moveTrans() {
 	}
 }
 
-void Robot_control::move(std::vector<double> v) { // check om koords er inde for rammerne ( 40*50 ) eller noget 
-	if ( isFrameCreated() ) {
-		insertRotvec(v);
-		std::vector<double> x = rtde_c.poseTrans(getFrame(), v);
-		rtde_c.moveL(x, _velocity, _acceleration, _async);
-		rtde_c.stopL();
-	}
+bool Robot_control::move(std::vector<double> v) { // check om koords er inde for rammerne ( 40*50 ) eller noget 
+	if ( v.empty() || v.size() != 3 || !isFrameCreated() ) 	{ return false; } // check om koordinater er fyldt, skrevet korrekt osv...
+	if ( v[0] > 0.4 || v[1] > 0.5 || v[2] > 0.6 ) 		{ return false; }
+	if ( v[0] < 0.0 || v[1] < 0.0 || v[2] < 0.1 ) 		{ return false; }
+	
+	insertRotvec(v);
+	std::vector<double> x = rtde_c.poseTrans(getFrame(), v);
+	rtde_c.moveL(x, _velocity, _acceleration);
+	rtde_c.stopL();
+	
+	return true;
 }
 
 
@@ -186,9 +198,9 @@ bool Robot_control::forceDown(int maxHeight) { // kører -> finde disk -> stop m
 	double newHeight;
 	while (rtde_r.getActualTCPForce()[2] < 20 ) {
     		std::chrono::steady_clock::time_point t_start = rtde_c.initPeriod();
-		std::cout << "Force: " << rtde_r.getActualTCPForce()[2] << std::endl;
+		//std::cout << "Force: " << rtde_r.getActualTCPForce()[2] << std::endl;
 		newHeight = startHeight - rtde_r.getActualTCPPose()[2];
-		std::cout << "newHeight: " << newHeight << std::endl;
+		//std::cout << "newHeight: " << newHeight << std::endl;
 		rtde_c.speedL(joint_speed, _acceleration);
     		
     		rtde_c.waitPeriod(t_start);
@@ -203,33 +215,6 @@ bool Robot_control::forceDown(int maxHeight) { // kører -> finde disk -> stop m
 	rtde_c.stopScript();
 	return true;
 }
-
-
-
-
-
-
-
-
-
-
-
-void Robot_control::insertAddons(std::vector<double> &v) {
-	v.insert(v.end(), {_velocity, _acceleration, _blend});
-}
-
-void Robot_control::insertRotvec(std::vector<double> &v) {
-	v.insert(v.end(), {getRotvec()[0], getRotvec()[1], getRotvec()[2]});
-}
-
-void Robot_control::setRotvec(std::vector<double> v) {
-	_rotvec = v;
-}
-
-std::vector<double> Robot_control::getRotvec() {
-	return _rotvec;
-}
-
 
 void Robot_control::printFrame() {
 	std::vector<double> a = getFrame();

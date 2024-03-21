@@ -1,7 +1,3 @@
-//#include <ur_rtde/rtde_control_interface.h>
-//#include <ur_rtde/rtde_receive_interface.h>
-//#include <thread>
-//#include <chrono>
 #include "robot_control.h"
 #include "kinematic.h"
 #include <vector>
@@ -15,13 +11,28 @@ int main(int argc, char* argv[]) {
 	//rc.writeFrame(a);
 	//a = rc.readFrame();
 	//rc.gameControl();
-	std::vector<double> a = {.0,.0,.3};
-	std::vector<double> b = {.0,.0,.4};
-	
-	while (true) {
+	//std::vector<double> a = {.0,.0,.3};
+	//std::vector<double> b = {.0,-.1,.4};
+	std::vector<double> frameTrans1 = {.1, .0, .3};	
+	std::vector<double> frameTrans2 = {.0, .1, .3};
+	std::vector<double> frameTrans3 = {.0, .0, .3};
+	std::vector<double> frameTrans4 = {.0, .0, .4};
+	std::vector<double> frameTrans5 = {.0, .0, .3};
+	bool a = true;
+	while (a) {
+		a = rc.move(frameTrans3);
+		a = rc.move(frameTrans1);
+		a = rc.move(frameTrans3);
+		a = rc.move(frameTrans2);
+		a = rc.move(frameTrans3);
+		a = rc.move(frameTrans4);
+	}
+
+
+
+	/*
 		rc.moveTrans();
 		
-	/*
 		rc.move(a);
 		rc.move(b);
 		
@@ -29,7 +40,6 @@ int main(int argc, char* argv[]) {
 	rc.move({.0,.0,.3});
 	rc.move({.0,.0,.4});
 	*/
-	}
 	//rc.forceDown();
 	//std::vector<double> a = {.20, -.10, .20};
 	//rc.move(a);

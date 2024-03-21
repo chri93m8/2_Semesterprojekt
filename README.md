@@ -25,4 +25,4 @@ Husk at køre ned langsomt.
 getActualTCPForce()
 
 # kinematic
-Intet virker, men det ser godt ud. f u
+Eric er gay

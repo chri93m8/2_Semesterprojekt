@@ -3,7 +3,7 @@
 
 Robot_control::Robot_control(std::string ip) : rtde_c(ip), rtde_r(ip)  {
 	_isFrameCreated = readFrame(); 
-	setRotvec({-d2r(90), .0, .0}); // hvor fuck skal den her ligge+?!?!?!
+	_rotvec = {-d2r(90), .0, .0};
 }
 
 double Robot_control::d2r(double degree) {
@@ -191,16 +191,15 @@ bool Robot_control::move(std::vector<double> v) { // check om koords er inde for
 	return true;
 }
 
-
 bool Robot_control::forceDown(int maxHeight) { // kører -> finde disk -> stop movement -> return
 	std::vector<double> joint_speed = {0.0, 0.0, -0.05, 0.0, 0.0, 0.0};
 	double startHeight = rtde_r.getActualTCPPose()[2];
 	double newHeight;
 	while (rtde_r.getActualTCPForce()[2] < 20 ) {
     		std::chrono::steady_clock::time_point t_start = rtde_c.initPeriod();
-		//std::cout << "Force: " << rtde_r.getActualTCPForce()[2] << std::endl;
+		std::cout << "Force: " << rtde_r.getActualTCPForce()[2] << std::endl;
 		newHeight = startHeight - rtde_r.getActualTCPPose()[2];
-		//std::cout << "newHeight: " << newHeight << std::endl;
+		std::cout << "newHeight: " << newHeight << std::endl;
 		rtde_c.speedL(joint_speed, _acceleration);
     		
     		rtde_c.waitPeriod(t_start);
@@ -219,8 +218,8 @@ bool Robot_control::forceDown(int maxHeight) { // kører -> finde disk -> stop m
 void Robot_control::printFrame() {
 	std::vector<double> a = getFrame();
 	for (const double i : a ) {
-			std::cout << i << ' ';
-		}
+		std::cout << i << ' ';
+	}
 	std::cout << std::endl;
 }
 

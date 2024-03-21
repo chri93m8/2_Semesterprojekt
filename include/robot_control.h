@@ -17,8 +17,9 @@ class Robot_control {
 		double _blend = 0.0;
 		bool _async = false;
 		std::vector<double> _rotvec;
-		const double pi = std::acos(-1);
 		bool _isFrameCreated; 
+		
+		const double pi = std::acos(-1);
 		double d2r(double degree);
 		void writeFrame(std::vector<double> &v);
 		void insertRotvec(std::vector<double> &v);

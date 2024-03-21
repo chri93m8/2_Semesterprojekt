@@ -29,7 +29,7 @@ void Robot_control::setRotvec(std::vector<double> v) {
 
 std::vector<double> Robot_control::getRotvec() {
 	return _rotvec;
-}s
+}
 
 void Robot_control::gameControl() {
 	std::cout << "--Menu--" << std::endl;

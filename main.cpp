@@ -13,19 +13,46 @@ int main(int argc, char* argv[]) {
 	//rc.gameControl();
 	//std::vector<double> a = {.0,.0,.3};
 	//std::vector<double> b = {.0,-.1,.4};
+	/*
 	std::vector<double> frameTrans1 = {.1, .0, .3};	
 	std::vector<double> frameTrans2 = {.0, .1, .3};
 	std::vector<double> frameTrans3 = {.0, .0, .3};
 	std::vector<double> frameTrans4 = {.0, .0, .4};
 	std::vector<double> frameTrans5 = {.0, .0, .3};
+	*/
+	std::vector<double> rod1 = {0.075, 0.425, 0.35}; //3rd tier
+	std::vector<double> rod2 = {0.200, 0.425, 0.35};
+	std::vector<double> rod3 = {0.325, 0.425, 0.35};
+	std::vector<double> discP1 = {0.100, 0.275, 0.25}; //largest -- 2nd tier
+	std::vector<double> discP2 = {0.300, 0.275, 0.25};
+	std::vector<double> discP3 = {0.075, 0.100, 0.10}; // 1st tier
+	std::vector<double> discP4 = {0.200, 0.100, 0.10};
+	std::vector<double> discP5 = {0.325, 0.100, 0.10}; //smallest
 	bool a = true;
 	while (a) {
+		a = rc.move(rod1);
+		a = rc.move(rod2);
+		a = rc.move(rod3);
+		a = rc.move(discP1);
+		a = rc.move(discP2);
+		a = rc.move(discP3);
+		a = rc.move(discP4);
+		a = rc.move(discP5);
+		
+		
+
+	/*
+		a = rc.move({.1, .1, .15});
+		a = rc.move({.2, .1, .15});
+		a = rc.move({.2, .2, .15});
+		a = rc.move({.1, .2, .15});
 		a = rc.move(frameTrans3);
 		a = rc.move(frameTrans1);
 		a = rc.move(frameTrans3);
 		a = rc.move(frameTrans2);
 		a = rc.move(frameTrans3);
 		a = rc.move(frameTrans4);
+		*/
 	}
 
 

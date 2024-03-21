@@ -15,15 +15,20 @@ int main(int argc, char* argv[]) {
 	//rc.writeFrame(a);
 	//a = rc.readFrame();
 	//rc.gameControl();
+	std::vector<double> a = {.0,.0,.3};
+	std::vector<double> b = {.0,.0,.4};
+	
 	while (true) {
-	/*
-		rc.move({.0,.0,.3});
+		rc.moveTrans();
 		
-		rc.move({.0,.0,.4});
+	/*
+		rc.move(a);
+		rc.move(b);
+		
+		rc.move({.0,.0,.5});
 	rc.move({.0,.0,.3});
 	rc.move({.0,.0,.4});
 	*/
-	rc.moveTrans();
 	}
 	//rc.forceDown();
 	//std::vector<double> a = {.20, -.10, .20};

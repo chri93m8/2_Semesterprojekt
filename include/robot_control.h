@@ -6,7 +6,6 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-
 #include <chrono>
 
 class Robot_control {
@@ -27,20 +26,19 @@ class Robot_control {
 		std::vector<double> getRotvec();
 		std::vector<double> getPose();
 		std::vector<double> getFrame();
-		bool isFrameCreated();
+		bool readFrame();	
+		void setRotvec(std::vector<double> v);
 	public:
 		Robot_control(std::string ip);
 		void createFrame();
 		void gameControl(); // This will be moved into the game_control.h class at a later point
 		void printFrame();
-		void moveTrans();
-		bool readFrame();
-		
+		void moveTrans();	// test bevægelse osv
+		bool isFrameCreated();	
 
 		//------ Game_control
 		bool forceDown(int maxHeight = 10); // kører -> finde disk -> stop movement -> return
 		void move(std::vector<double> v);
-		void setRotvec(std::vector<double> v);
 };
 
 #endif //ROBOT_CONTROL_H

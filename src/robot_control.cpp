@@ -3,7 +3,6 @@
 
 Robot_control::Robot_control(std::string ip) : rtde_c(ip), rtde_r(ip)  {
 	_isFrameCreated = readFrame(); 
-
 	setRotvec({-d2r(90), .0, .0}); // hvor fuck skal den her ligge+?!?!?!
 }
 
@@ -88,13 +87,13 @@ void Robot_control::moveTrans() {
 		//std::vector<double> frameTrans1 = rtde_c.poseTrans(frame, {.1/*-0.0767*/, /*-.0223*/.0, .0,.0/* (pi*22.3/180)*/, pi, .0});	
 		//std::vector<double> frameTrans2 = rtde_c.poseTrans(frame, {.0, .1, .0, .0/* (pi*22.3/180)*/, pi, .0});	
 		//std::vector<double> frameTrans3 = rtde_c.poseTrans(frame, {.0, .0, .0, .0/* (pi*22.3/180)*/, pi, .0});	
+		/*
 		std::vector<double> frameTrans1 = rtde_c.poseTrans(frame, {.1, .0, .3, -d2r(90), .0, .0}); //(pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
 		std::vector<double> frameTrans2 = rtde_c.poseTrans(frame, {.0, .1, .3, -d2r(90), .0, .0});//(pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
 		std::vector<double> frameTrans3 = rtde_c.poseTrans(frame, {.0, .0, .3, -d2r(90), .0, .0});//(pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
 		std::vector<double> frameTrans4 = rtde_c.poseTrans(frame, {.0, .0, .4, -d2r(90), .0, .0});//(pi*148/180), -(pi*102/180), .0});//(pi*90/180), (pi*17/180), (pi*17/180)});	
 		
 		std::vector<double> frameTrans5 = rtde_c.poseTrans(frame, {.0, .0, .3, -d2r(90), .0, .0 });
-		/*
 		
 		std::vector<double> frameTrans1 = {.1, .0, .3};	
 		std::vector<double> frameTrans2 = {.0, .1, .3};
@@ -103,7 +102,7 @@ void Robot_control::moveTrans() {
 		
 		std::vector<double> frameTrans5 = {.0, .0, .3};
 		
-		setRotvec({-d2r(90), .0, .0});
+		//setRotvec({-d2r(90), .0, .0});
 		
 		insertRotvec(frameTrans1);
 		insertRotvec(frameTrans2);
@@ -115,6 +114,19 @@ void Robot_control::moveTrans() {
 			std::cout << "dd = " << dd << std::endl;
 		}
 		*/
+		std::vector<double> frameTrans1 = {.1, .0, .3};	
+		std::vector<double> frameTrans2 = {.0, .1, .3};
+		std::vector<double> frameTrans3 = {.0, .0, .3};
+		std::vector<double> frameTrans4 = {.0, .0, .4};
+		std::vector<double> frameTrans5 = {.0, .0, .3};
+		
+		move(frameTrans3);
+		move(frameTrans1);
+		move(frameTrans3);
+		move(frameTrans2);
+		move(frameTrans3);
+		move(frameTrans4);
+		
 		/*
 		frameTrans1 = rtde_c.poseTrans(frame, frameTrans1);	
 		frameTrans2 = rtde_c.poseTrans(frame, frameTrans2);
@@ -122,12 +134,12 @@ void Robot_control::moveTrans() {
 		frameTrans4 = rtde_c.poseTrans(frame, frameTrans4);
 		
 		frameTrans5 = rtde_c.poseTrans(frame, frameTrans5);
-		*/
 		insertAddons(frameTrans1);
 		insertAddons(frameTrans2);
 		insertAddons(frameTrans3);
 		insertAddons(frameTrans4);
 		insertAddons(frameTrans5);
+		*/
 			
 		
 		
@@ -137,11 +149,10 @@ void Robot_control::moveTrans() {
 		//frameTrans4.insert(frameTrans4.end(), {_velocity, _acceleration, _blend});
 		//frameTrans5.insert(frameTrans5.end(), {_velocity, _acceleration, _blend});
 
+		/*
 		std::vector<std::vector<double>> path;
 		//path.push_back(frameTrans3);
-		/*
 		path.push_back(frameTrans5);
-		*/
 				
 		path.push_back(frameTrans3);
 		path.push_back(frameTrans1);
@@ -152,6 +163,7 @@ void Robot_control::moveTrans() {
 		path.push_back(frameTrans3);
 		// Send a linear path with blending in between - (currently uses separate script)
 	  	rtde_c.moveL(path);
+		*/
 		// Stop the RTDE control script
 		//rtde_c.stopScript();
 		

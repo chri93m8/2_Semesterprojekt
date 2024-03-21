@@ -5,7 +5,7 @@
 #include <vector>
 #include <iostream>
 
-class Game_Control{
+class Game_control{
 	private:
 		const double pi =  std::acos(-1);
 		int speed = 0.5;
@@ -67,7 +67,7 @@ class Game_Control{
 		std::vector<double> homeVec = {0.0, 0.0, 0.0, 0, 0, 0};
 		
 	public:
-		Game_Control(std::string ip);
+		Game_control(std::string ip);
 		void home();
 		//robot_control.move(homing pos)
 		//snakker til UR -- burde være robot_control method??

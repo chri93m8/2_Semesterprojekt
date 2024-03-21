@@ -1,19 +1,19 @@
 #include "game_control.h"
 
 
-Game_Control::Game_Control(std::string ip) : rc(ip){
+Game_control::Game_control(std::string ip) : rc(ip){
 	std::cout << "cunt" << std::endl;
 	
 }
 
-void Game_Control::home(){
+void Game_control::home(){
 
 	rc.printFrame();
 
 	//rc.move(&homeVec, speed, acceleration);
 }
 
-void Game_Control::discDistribution(){
+void Game_control::discDistribution(){
 /* rodstate er ny counter
 		while(rodstate <=5){
 			disc = findDisc();
@@ -32,7 +32,7 @@ void Game_Control::discDistribution(){
 	*/
 }
 
-int Game_Control::findDisc(){
+int Game_control::findDisc(){
 	//force in percent??
 	//rc.move til start pos "home"
 	//rc.move til rod whatever
@@ -57,7 +57,7 @@ int Game_Control::findDisc(){
 	//return disc; //enum
 }
 
-void Game_Control::discSorting(int disc){ //pass by reference??
+void Game_control::discSorting(int disc){ //pass by reference??
 
 	//disc.isSorted = true;
 	//rodstate++; 

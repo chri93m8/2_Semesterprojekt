@@ -1,4 +1,5 @@
 #include "robot_control.h"
+#include "game_control.h"
 #include "kinematic.h"
 #include <vector>
 
@@ -6,7 +7,9 @@ int main(int argc, char* argv[]) {
 //cunt
 
 	Robot_control rc("192.168.1.54");
-	//rc.createFrame();
+	
+	
+		//rc.createFrame();
 	//std::vector<double> a = {-1.54, -1.83, -2.28, -0.59, 1.60, 0.023};
 	//rc.writeFrame(a);
 	//a = rc.readFrame();
@@ -21,7 +24,9 @@ int main(int argc, char* argv[]) {
 	std::vector<double> frameTrans5 = {.0, .0, .3};
 	*/
 	//rc.createFrame();
-	rc.frameMove();
+	//rc.frameMove();
+	
+	
 	
 	std::vector<double> rod1 = {0.075, 0.425, 0.35}; //3rd tier
 	std::vector<double> rod2 = {0.200, 0.425, 0.35};
@@ -31,20 +36,27 @@ int main(int argc, char* argv[]) {
 	std::vector<double> discP3 = {0.075, 0.100, 0.10}; // 1st tier
 	std::vector<double> discP4 = {0.200, 0.100, 0.10};
 	std::vector<double> discP5 = {0.325, 0.100, 0.10}; //smallest
-	bool a = false;
+	
+	std::vector<double> homeVec = {0.10, 0.30, 0.20};
+	
+	
+	bool a = true;
 	while (a) {
-	/*
-		a = rc.move(rod1);
+		//a = rc.move(homeVec);
+		//std::cout<<"homeVec"; 
+		
+		a = rc.move(homeVec);
 		a = rc.move(rod2);
 		a = rc.move(rod3);
+		/*
 		a = rc.move(discP1);
 		a = rc.move(discP2);
 		a = rc.move(discP3);
 		a = rc.move(discP4);
 		a = rc.move(discP5);
-	*/	
-		
-
+		*/
+			
+	
 	/*
 		a = rc.move({.1, .1, .15});
 		a = rc.move({.2, .1, .15});
@@ -56,10 +68,12 @@ int main(int argc, char* argv[]) {
 		a = rc.move(frameTrans2);
 		a = rc.move(frameTrans3);
 		a = rc.move(frameTrans4);
-		*/
+	*/
+		
 	}
 
-
+	Game_control gc("192.168.1.54");
+	gc.home(); 
 
 	/*
 		rc.moveTrans();
@@ -88,6 +102,7 @@ int main(int argc, char* argv[]) {
 	try {
 
 	}
+
 	catch (const std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}

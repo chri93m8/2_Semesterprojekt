@@ -11,6 +11,7 @@ class Game_control{
 		int speed = 0.5;
 		int acceleration = 0.2; 
 		Robot_control rc;
+		int rodState; 
 		
 		//enum Board
 			//50x40
@@ -46,31 +47,32 @@ class Game_control{
 		//int rodstate = 0; //tæller hvor langt vi er nået med sorting
 		
 			
-		//rod presets {x, y, z, rx, ry, rz} !!!!evt fjern rotationsvektorerne
+		//rod presets {x, y, z} 
 		
-		std::vector<double> rod1 = {0.75, 0.100, 0.35, 0, 0, 0}; //3rd tier
-		std::vector<double> rod2 = {0.200, 0.100, 0.35, 0, 0, 0};
-		std::vector<double> rod3 = {0.325, 0.100, 0.35, 0 , 0, 0};
-
-		//disc place presets {x, y, z, rx, ry, rz}
-		std::vector<double> discP1 = {0.100, 0.275, 0.25, 0, 0, 0}; //largest -- 2nd tier
-		std::vector<double> discP2 = {0.300, 0.275, 0.25, 0, 0, 0};
-
-		std::vector<double> discP3 = {0.75, 0.425, 0.10, 0, 0, 0}; // 1st tier
-		std::vector<double> discP4 = {0.200, 0.425, 0.10, 0, 0, 0};
-		std::vector<double> discP5 = {0.325, 0.425, 0.10, 0, 0, 0}; //smallest
+		std::vector<double> rod1 = {0.075, 0.425, 0.35}; //3rd tier
+		std::vector<double> rod2 = {0.200, 0.425, 0.35};
+		std::vector<double> rod3 = {0.325, 0.425, 0.35}; //sorted rod??
+		
+		//disc presets {x, y, z} 
+		std::vector<double> discP1 = {0.100, 0.275, 0.25}; //largest -- 2nd tier
+		std::vector<double> discP2 = {0.300, 0.275, 0.25};
+		
+		std::vector<double> discP3 = {0.075, 0.100, 0.10}; // 1st tier
+		std::vector<double> discP4 = {0.200, 0.100, 0.10};
+		std::vector<double> discP5 = {0.325, 0.100, 0.10}; //smallest	
 		
 		//std::vector<vector<double>> discSpaces = {discP1, discP2, discP3, discP4, discP5};
 		
-		//home preset?? (orientation? (22.3*pi)/180)
-		//(-15, 20, 20)
-		std::vector<double> homeVec = {0.0, 0.0, 0.0, 0, 0, 0};
+		std::vector<double> homeVec = {0.50, 0.40, 0.80};
 		
 	public:
 		Game_control(std::string ip);
+		void menu(); 
+		
 		void home();
 		//robot_control.move(homing pos)
-		//snakker til UR -- burde være robot_control method??
+		//snakker til UR -- burde være robot_control method?
+		
 		void discDistribution(); // counter funktion
 		int findDisc(); 
 		//benytter force control

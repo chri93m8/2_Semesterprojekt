@@ -2,25 +2,49 @@
 
 
 Game_control::Game_control(std::string ip) : rc(ip){
-	std::cout << "cunt" << std::endl;
-	//menu(); 
+	std::cout << "Game_control constructor running... " << std::endl;
+	menu(); 
 
 	
 }
 void Game_control::menu(){
-	std::cout<<"Run program: ";
-	//home(); 
-	//hvad skal der overhovedet være i menuen???
-	discDistribution(); 
+	int option;
+	std::cout<<"MENU"<<std::endl;
+	std::cout<<"1: home robot"<<std::endl;
+	std::cout<<"2: run program"<<std::endl;
+	std::cout<<"3: open settings"<<std::endl;
+	std::cin>>option; 
+	
+	switch(option){
+		case 1:
+			home();
+			break;
+		case 2:
+			discDistribution(); 
+			break;
+		case 3: 
+			settings();
+			break; 
+	} 
 }
+
+void Game_control::settings(){
+
+}
+
 void Game_control::home(){
 
 	//rc.printFrame();
 	std::cout<<"jeg er i Game_control.home"<<std::endl; 
 	rc.move(homeVec);
+	//rc.move(rod1);
+	//rc.move(rod2);
+	//rc.move(rod3);
 }
 
 void Game_control::discDistribution(){
+
+std::cout<<"jeg er i Game_control.discDistribution"<<std::endl; 
 //rodstate er ny counter
 /*
 		while(rodState <5){ //mens der stadig er discs tilbage
@@ -63,7 +87,7 @@ int Game_control::findDisc(){
 	*/
 }
 
-void Game_control::discSorting(int disc){ //pass by reference??
+void Game_control::discSorting(int disc){ 
 	/*
 
 	if (mic_control.isGripping()){ //grippern har fat om en disc

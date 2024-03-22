@@ -6,7 +6,9 @@
 int main(int argc, char* argv[]) {
 //cunt
 
-	Robot_control rc("192.168.1.54");
+	//Robot_control rc("192.168.1.54");
+	Game_control gc("192.168.1.54");
+	/ 
 	
 	
 		//rc.createFrame();
@@ -26,7 +28,7 @@ int main(int argc, char* argv[]) {
 	//rc.createFrame();
 	//rc.frameMove();
 	
-	
+	/*
 	
 	std::vector<double> rod1 = {0.075, 0.425, 0.35}; //3rd tier
 	std::vector<double> rod2 = {0.200, 0.425, 0.35};
@@ -69,11 +71,12 @@ int main(int argc, char* argv[]) {
 		a = rc.move(frameTrans3);
 		a = rc.move(frameTrans4);
 	*/
+	/*
 		
 	}
+	
 
-	Game_control gc("192.168.1.54");
-	gc.home(); 
+	*/
 
 	/*
 		rc.moveTrans();

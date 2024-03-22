@@ -63,11 +63,12 @@ class Game_control{
 		
 		//std::vector<vector<double>> discSpaces = {discP1, discP2, discP3, discP4, discP5};
 		
-		std::vector<double> homeVec = {0.50, 0.40, 0.80};
+		std::vector<double> homeVec = {0.10, 0.30, 0.20};
 		
 	public:
 		Game_control(std::string ip);
 		void menu(); 
+		void settings(); 
 		
 		void home();
 		//robot_control.move(homing pos)

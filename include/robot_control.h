@@ -38,10 +38,11 @@ class Robot_control {
 		void printFrame();
 		void moveTrans();	// test bevægelse osv
 		bool isFrameCreated();	
-
+		
 		//------ Game_control
 		bool forceDown(int maxHeight = 10); // kører -> finde disk -> stop movement -> return
 		bool move(std::vector<double> v);
+		//mangler moveZ som modtager negativ eller positiv tal størrelse
 };
 
 #endif //ROBOT_CONTROL_H

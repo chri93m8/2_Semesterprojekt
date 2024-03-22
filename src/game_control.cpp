@@ -46,19 +46,20 @@ void Game_control::discDistribution(){
 
 std::cout<<"jeg er i Game_control.discDistribution"<<std::endl; 
 //rodstate er ny counter
-/*
+
 		while(rodState <5){ //mens der stadig er discs tilbage
-			disc = findDisc(); 
+			//disc = findDisc(); 
+			int disc = Disc1.value; 
 		
-			if(rodState = disc.value-1){ //altså den nuværende disk er den største usorterede disk (og den derfor er usorteret)
+			if(rodState = disc-1){ //altså den nuværende disk er den største usorterede disk (og den derfor er usorteret)
 				discSorting(disc);
-			}else if(!disc.isSorted){ //hvis disc ikke 
+			}else if(!Disc1.isSorted){ //hvis disc ikke 
 				rc.move(discSpaces[disc]);
 			}
 		}
 		
 	
-	*/
+	
 }
 
 int Game_control::findDisc(){
@@ -88,21 +89,22 @@ int Game_control::findDisc(){
 }
 
 void Game_control::discSorting(int disc){ 
-	/*
-
-	if (mic_control.isGripping()){ //grippern har fat om en disc
-		rc.move(rod3);
-		rc.move({0.0 , 0.0, -0.10}) //skal afhænge af hvor langt sorteringen er nået (nedadgående bevægelse)
+	
+	//std::cout<<rodState<<std::endl;
+	bool tempisGripping = true; 
+	if (tempisGripping/*mic_control.isGripping()*/){ //grippern har fat om en disc
+		rc.move(rod2);
+		//rc.down funktion: -0.10(10*rodState) //skal afhænge af hvor langt sorteringen er nået (nedadgående bevægelse) eller benyt forceDown??
 		//mic_control.Open(); 
-		rc.move(rod3);
-		rc.move(homeVec);  
+		//rc.move(rod3);
+		//rc.move(homeVec);  
 	}
 	
-	disc.isSorted = true;
+	Disc1.isSorted = true;
 	rodState++; 
 	
 	//return??
-	*/
+	
 
 }
 

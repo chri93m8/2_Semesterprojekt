@@ -11,10 +11,6 @@ class Game_control{
 		int speed = 0.5;
 		int acceleration = 0.2; 
 		Robot_control rc;
-		int rodState; 
-		
-		//enum Board
-			//50x40
 		
 		struct { 
 			int discHeight; //universal??
@@ -44,7 +40,7 @@ class Game_control{
 		*/
 		
 		
-		//int rodstate = 0; //tæller hvor langt vi er nået med sorting
+		int rodState = 0; //tæller hvor langt vi er nået med sorting
 		
 			
 		//rod presets {x, y, z} 
@@ -61,40 +57,19 @@ class Game_control{
 		std::vector<double> discP4 = {0.200, 0.100, 0.10};
 		std::vector<double> discP5 = {0.325, 0.100, 0.10}; //smallest	
 		
-		//std::vector<vector<double>> discSpaces = {discP1, discP2, discP3, discP4, discP5};
+		std::vector<std::vector<double>> discSpaces = {discP1, discP2, discP3, discP4, discP5};
 		
 		std::vector<double> homeVec = {0.10, 0.30, 0.20};
+		
 		
 	public:
 		Game_control(std::string ip);
 		void menu(); 
 		void settings(); 
-		
 		void home();
-		//robot_control.move(homing pos)
-		//snakker til UR -- burde være robot_control method?
-		
-		void discDistribution(); // counter funktion
+		void discDistribution();
 		int findDisc(); 
-		//benytter force control
-		//benytter pot-meter control
-		
-		//mic_control.Open(); // mekanisk, ikke forbindelse
-		//mic_control.Close();
-		
-		//if(modstand == size pre-set) --> kør disc space pre-set på Disc placement metode 
-		//return disc
-		
-		//void discPlacement(int disc);
-		//UR instruktioner
-		//modtager disc
 		void discSorting(int disc);
-		//mic_control.Open();
-		//mic_control.Close();
-		
-		//fast sæt af instruktioner baseret på disc space pre-sets
-		//snakker til UR
-		//kør evt home når færdig??
 		
 };
 

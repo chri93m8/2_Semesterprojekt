@@ -12,11 +12,12 @@ class Game_control{
 		int acceleration = 0.2; 
 		Robot_control rc;
 		
-		struct { 
+		
+		struct Disc { 
 			int discHeight; //universal??
 			int value;
-			int size; // afhængig af modstand ??
-			bool isSorted = false;
+			float size; // afhængig af modstand ??
+			//bool isSorted = false;
 			
 		
 		}Disc1, Disc2, Disc3, Disc4, Disc5;
@@ -38,6 +39,9 @@ class Game_control{
 		Disc5.value = 5;
 		Disc5.size = 0.08;
 		*/
+		
+		//int discHeight; 
+		//enum Disc1 {value = 1, size = } //kun ints -- kunne evt dividere med 100 i resten af koden/hvad er smartest?
 		
 		
 		int rodState = 0; //tæller hvor langt vi er nået med sorting

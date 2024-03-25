@@ -2,45 +2,101 @@
 
 
 Game_control::Game_control(std::string ip) : rc(ip){
-	std::cout << "cunt" << std::endl;
+	std::cout << "Game_control constructor running... " << std::endl;
+	menu(); 
+
 	
+}
+void Game_control::menu(){
+	int option;
+	std::cout<<"MENU"<<std::endl;
+	std::cout<<"1: home robot"<<std::endl;
+	std::cout<<"2: run program"<<std::endl;
+	std::cout<<"3: open settings"<<std::endl;
+	std::cin>>option; 
+	
+	switch(option){
+		case 1:
+			home();
+			break;
+		case 2:
+			discDistribution(); 
+			break;
+		case 3: 
+			settings();
+			break; 
+	} 
+}
+
+void Game_control::settings(){
+	int option;
+	std::cout<<"SETTINGS"<<std::endl;
+	std::cout<<"1: adjust speed"<<std::endl;
+	std::cout<<"2: adjust acceleration"<<std::endl;
+	std::cin>>option; 
+	
+	switch(option){
+		case 1: 
+			int speed;
+			std::cout<<"Type your prefered speed in..."<<std::endl;
+			std::cin>>speed;
+			std::cout<<"New speed: "<<speed<<std::endl; 
+			//rc.speed = speed; 
+			break;
+		case 2:
+			int acceleration;
+			std::cout<<"Type your prefered acceleration in..."<<std::endl;
+			std::cin>>acceleration;
+			std::cout<<"New acceleration: "<<acceleration<<std::endl; 
+			//rc.acceleration = acceleration; 
+			break;
+	}
+
 }
 
 void Game_control::home(){
 
-	rc.printFrame();
+	//rc.printFrame();
+	std::cout<<"Game_control.home running..."<<std::endl; 
+	//rc.move(homeVec);
 
-	//rc.move(&homeVec, speed, acceleration);
 }
 
 void Game_control::discDistribution(){
-/* rodstate er ny counter
-		while(rodstate <=5){
-			disc = findDisc();
+
+std::cout<<"Game_control.discDistribution runnning..."<<std::endl; 
+std::cout<<rodState<<std::endl;
+
+		int disc = 1;
+		std::cout<<disc<<std::endl;
+		while(rodState<5){ //mens der stadig er discs tilbage
+			//disc = findDisc().value; 
+			//isSorted = findDisc().isSorted;
 			
-			if(!disc.isSorted){
-				if(rodstate = disc.value-1){ //altså den nuværende disk er den største usorterede disk
-					discSorting(disc);
-				
-				}
-			}else{
+			//bool isSorted = false; necessary??
+			if(rodState = disc-1){ //altså den nuværende disk er den største usorterede disk (og den derfor er usorteret)
+				discSorting(disc);
+			}
+			/*
+			else{ //den er ikke distrubueret; distribuer til plads
 				rc.move(discSpaces[disc]);
 			}
+			*/
 		}
 		
 	
-	*/
+	
 }
 
 int Game_control::findDisc(){
-	//force in percent??
-	//rc.move til start pos "home"
-	//rc.move til rod whatever
+/*
+
+	rc.move(rod1);
 	//open/close gripper to slide down rod
 	
-	//bool isFound = rc.forceDown(); 
+	bool isFound = rc.forceDown(); 
 	
-	//if (isFound){
+	if (isFound){
 		
 		//benytter pot-meter control
 		//mic_control.Open(); // mekanisk, ikke forbindelse
@@ -55,19 +111,28 @@ int Game_control::findDisc(){
 	//	}
 	
 	//return disc; //enum
+	*/
 }
 
-void Game_control::discSorting(int disc){ //pass by reference??
-
-	//disc.isSorted = true;
-	//rodstate++; 
+void Game_control::discSorting(int disc){ 
+std::cout<<"Game_control.discSorting runnning..."<<std::endl; 
 	
-	//rc.move til home pos
-	//if mic_control.isGripping() = true
-	//rc.move til rod pos
-	//else
-	//rc.move til disc space pos
-	//rc.move til rod pos
+	//std::cout<<rodState<<std::endl;
+	bool tempisGripping = true; 
+	if (tempisGripping/*mic_control.isGripping()*/){ //grippern har fat om en disc
+		rc.move(rod1);
+		rc.move(rod2);
+		rc.move(rod3);
+		//rc.down funktion: -0.10(10*rodState) //skal afhænge af hvor langt sorteringen er nået (nedadgående bevægelse) eller benyt forceDown??
+		//mic_control.Open(); 
+		//rc.move(rod3);
+		//rc.move(homeVec);  
+	}
+	
+	//Disc1.isSorted = true;
+	rodState++; 
+	
+	//return??
 	
 
 }

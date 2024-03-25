@@ -24,6 +24,9 @@ public:
 	void gripperData();
 	//Behandeler data fra requestData() og sender det vider i programmet
 	//Returne et aray med gripperSate(0=clost 1=open) Returne diskSize(1-5)
+	
+	bool isGripping(); 
+	
 	 
 };
 

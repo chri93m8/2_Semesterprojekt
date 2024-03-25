@@ -12,14 +12,12 @@ class Game_control{
 		int acceleration = 0.2; 
 		Robot_control rc;
 		
-		//enum Board
-			//50x40
 		
-		struct { 
+		struct Disc { 
 			int discHeight; //universal??
 			int value;
-			int size; // afhængig af modstand ??
-			bool isSorted = false;
+			float size; // afhængig af modstand ??
+			//bool isSorted = false;
 			
 		
 		}Disc1, Disc2, Disc3, Disc4, Disc5;
@@ -42,56 +40,40 @@ class Game_control{
 		Disc5.size = 0.08;
 		*/
 		
+		//int discHeight; 
+		//enum Disc1 {value = 1, size = } //kun ints -- kunne evt dividere med 100 i resten af koden/hvad er smartest?
 		
-		//int rodstate = 0; //tæller hvor langt vi er nået med sorting
+		
+		int rodState = 0; //tæller hvor langt vi er nået med sorting
 		
 			
-		//rod presets {x, y, z, rx, ry, rz} !!!!evt fjern rotationsvektorerne
+		//rod presets {x, y, z} 
 		
-		std::vector<double> rod1 = {0.75, 0.100, 0.35, 0, 0, 0}; //3rd tier
-		std::vector<double> rod2 = {0.200, 0.100, 0.35, 0, 0, 0};
-		std::vector<double> rod3 = {0.325, 0.100, 0.35, 0 , 0, 0};
-
-		//disc place presets {x, y, z, rx, ry, rz}
-		std::vector<double> discP1 = {0.100, 0.275, 0.25, 0, 0, 0}; //largest -- 2nd tier
-		std::vector<double> discP2 = {0.300, 0.275, 0.25, 0, 0, 0};
-
-		std::vector<double> discP3 = {0.75, 0.425, 0.10, 0, 0, 0}; // 1st tier
-		std::vector<double> discP4 = {0.200, 0.425, 0.10, 0, 0, 0};
-		std::vector<double> discP5 = {0.325, 0.425, 0.10, 0, 0, 0}; //smallest
+		std::vector<double> rod1 = {0.075, 0.425, 0.35}; //3rd tier
+		std::vector<double> rod2 = {0.200, 0.425, 0.35};
+		std::vector<double> rod3 = {0.325, 0.425, 0.35}; //sorted rod??
 		
-		//std::vector<vector<double>> discSpaces = {discP1, discP2, discP3, discP4, discP5};
+		//disc presets {x, y, z} 
+		std::vector<double> discP1 = {0.100, 0.275, 0.25}; //largest -- 2nd tier
+		std::vector<double> discP2 = {0.300, 0.275, 0.25};
 		
-		//home preset?? (orientation? (22.3*pi)/180)
-		//(-15, 20, 20)
-		std::vector<double> homeVec = {0.0, 0.0, 0.0, 0, 0, 0};
+		std::vector<double> discP3 = {0.075, 0.100, 0.10}; // 1st tier
+		std::vector<double> discP4 = {0.200, 0.100, 0.10};
+		std::vector<double> discP5 = {0.325, 0.100, 0.10}; //smallest	
+		
+		std::vector<std::vector<double>> discSpaces = {discP1, discP2, discP3, discP4, discP5};
+		
+		std::vector<double> homeVec = {0.10, 0.30, 0.20};
+		
 		
 	public:
 		Game_control(std::string ip);
+		void menu(); 
+		void settings(); 
 		void home();
-		//robot_control.move(homing pos)
-		//snakker til UR -- burde være robot_control method??
-		void discDistribution(); // counter funktion
+		void discDistribution();
 		int findDisc(); 
-		//benytter force control
-		//benytter pot-meter control
-		
-		//mic_control.Open(); // mekanisk, ikke forbindelse
-		//mic_control.Close();
-		
-		//if(modstand == size pre-set) --> kør disc space pre-set på Disc placement metode 
-		//return disc
-		
-		//void discPlacement(int disc);
-		//UR instruktioner
-		//modtager disc
 		void discSorting(int disc);
-		//mic_control.Open();
-		//mic_control.Close();
-		
-		//fast sæt af instruktioner baseret på disc space pre-sets
-		//snakker til UR
-		//kør evt home når færdig??
 		
 };
 

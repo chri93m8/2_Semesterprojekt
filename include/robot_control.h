@@ -31,13 +31,14 @@ class Robot_control {
 		bool readFrame();	
 	public:
 		Robot_control(std::string ip);
-		void frameMove();
+		void moveFrame();
 		void setRotvec(std::vector<double> v);
 		void createFrame();
 		void gameControl(); // This will be moved into the game_control.h class at a later point
 		void printFrame();
 		void moveTrans();	// test bevægelse osv
 		bool isFrameCreated();	
+		void reconnect();
 		
 		//------ Game_control
 		bool forceDown(int maxHeight = 10); // kører -> finde disk -> stop movement -> return

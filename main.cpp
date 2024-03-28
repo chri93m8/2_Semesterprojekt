@@ -8,11 +8,17 @@ int main(int argc, char* argv[]) {
 
 	Robot_control rc("192.168.1.54");
 	//Game_control gc("192.168.1.54");
+	/*
+	try {
+	rc.moveFrame();
+	rc.reconnect();
+	rc.moveTrans();
 	//rc.moveTrans();
-	rc.moveZ(-0.1);
-	rc.moveZ(0.1);
-	rc.moveZ(-0.1);
-	
+	} 
+	catch ( const std::exception e) {
+		std::cout << e.what() << std::endl;
+	}
+	*/
 	
 	
 		//rc.createFrame();

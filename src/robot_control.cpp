@@ -31,6 +31,25 @@ std::vector<double> Robot_control::getRotvec() {
 	return _rotvec;
 }
 
+void Robot_control::reconnect() {
+		std::cout << "connected: " << rtde_c.isConnected() << std::endl;
+		/*
+	while (rtde_c.isConnected()) {
+	
+    		std::chrono::steady_clock::time_point t_start = rtde_c.initPeriod();
+		std::cout << "connected: " << rtde_c.isConnected() << std::endl;
+		rtde_c.reconnect();
+		
+    		rtde_c.waitPeriod(t_start);
+	}
+		std::cout << "connected: " << rtde_c.isConnected() << std::endl;
+		*/
+		
+    		std::chrono::steady_clock::time_point t_start = rtde_c.initPeriod();
+		rtde_c.reuploadScript();
+    		rtde_c.waitPeriod(t_start);
+}
+
 void Robot_control::gameControl() {
 	std::cout << "--Menu--" << std::endl;
 	std::cout << "Create new frame, Press 1" << std::endl;
@@ -92,6 +111,7 @@ void Robot_control::createFrame() {
 		std::vector<double> feat = kin.createFrame();
 		writeFrame(feat);
 	}
+	
 }
 
 void Robot_control::moveTrans() {
@@ -179,8 +199,8 @@ void Robot_control::moveTrans() {
 	}
 }
 
-void Robot_control::frameMove() {
-  // Curses Initialisations
+void Robot_control::moveFrame() {
+// Curses Initialisations
   initscr();
   raw();
   keypad(stdscr, TRUE);
@@ -189,13 +209,13 @@ void Robot_control::frameMove() {
 
   // Parameters
   double speed_magnitude = 0.15;
-  std::vector<double> speed_vector = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+  std::vector<double> speed_vector = {0.0, 0.0, 0.05, 0.0, 0.0, 0.0};
   rtde_c.jogStart(speed_vector, ur_rtde::RTDEControlInterface::FEATURE_TOOL);
 
-  std::string instructions("[ Use arrow keys to control the robot, to exit press 'q' ]");
-  int c, row, col;
-  getmaxyx(stdscr, row, col);
-  mvprintw(row / 2, (col-strlen(instructions.c_str())) / 2, "%s", instructions.c_str());
+  //std::string instructions("[ Use arrow keys to control the robot, to exit press 'q' ]");
+  int c;//, row, col;
+  //getmaxyx(stdscr, row, col);
+  //mvprintw(row / 2, (col-strlen(instructions.c_str())) / 2, "%s", instructions.c_str());
 
   while ((c = getch()) != 'q')
   {
@@ -226,7 +246,54 @@ void Robot_control::frameMove() {
     }
     rtde_c.waitPeriod(t_start);
   }
+/*
+  // Curses Initialisations
+  initscr();
+  raw();
+  keypad(stdscr, TRUE);
+  noecho();
+  timeout(10);
 
+  // Parameters
+  double speed_magnitude = 0.15;
+  std::vector<double> speed_vector = {0.0, 0.0, 0.05, 0.0, 0.0, 0.0};
+  rtde_c.jogStart(speed_vector, ur_rtde::RTDEControlInterface::FEATURE_TOOL);
+
+  //std::string instructions("[ Use arrow keys to control the robot, to exit press 'q' ]");
+  int c;//, row, col;
+  //getmaxyx(stdscr, row, col);
+  //mvprintw(row / 2, (col-strlen(instructions.c_str())) / 2, "%s", instructions.c_str());
+
+  while ((c = getch()) != 'q')
+  {
+    std::chrono::steady_clock::time_point t_start = rtde_c.initPeriod();
+    c = getch();
+    switch (c)
+    {
+      case KEY_UP:
+        speed_vector = {0.0, 0.0, -speed_magnitude, 0.0, 0.0, 0.0};
+        rtde_c.jogStart(speed_vector, ur_rtde::RTDEControlInterface::FEATURE_TOOL);
+        break;
+      case KEY_DOWN:
+        speed_vector = {0.0, 0.0, speed_magnitude, 0.0, 0.0, 0.0};
+        rtde_c.jogStart(speed_vector, ur_rtde::RTDEControlInterface::FEATURE_TOOL);
+        break;
+      case KEY_LEFT:
+        speed_vector = {speed_magnitude, 0.0, 0.0, 0.0, 0.0, 0.0};
+        rtde_c.jogStart(speed_vector, ur_rtde::RTDEControlInterface::FEATURE_TOOL);
+        break;
+      case KEY_RIGHT:
+        speed_vector = {-speed_magnitude, 0.0, 0.0, 0.0, 0.0, 0.0};
+        rtde_c.jogStart(speed_vector, ur_rtde::RTDEControlInterface::FEATURE_TOOL);
+        break;
+      default:
+        speed_vector = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+        rtde_c.jogStart(speed_vector, ur_rtde::RTDEControlInterface::FEATURE_TOOL);
+        break;
+    }
+    rtde_c.waitPeriod(t_start);
+  }
+*/
   endwin();
   rtde_c.jogStop();
   //rtde_control.stopScript();
@@ -244,12 +311,10 @@ bool Robot_control::moveZ(double distance) {
 	return true;
 }
 
-
-
 bool Robot_control::move(std::vector<double> v) { // check om koords er inde for rammerne ( 40*50 ) eller noget 
 	if ( v.empty() || v.size() != 3 || !isFrameCreated() ) 	{ return false; } // check om koordinater er fyldt, skrevet korrekt osv...
 	if ( v[0] > 0.4 || v[1] > 0.5 || v[2] > 0.6 ) 		{ return false; }
-	if ( v[0] < 0.0 || v[1] < 0.0 || v[2] < 0.1 ) 		{ return false; }
+	if ( v[0] < 0.0 || v[1] < 0.0 || v[2] < 0.01 ) 		{ return false; }
 	
 	insertRotvec(v);
 	std::vector<double> x = rtde_c.poseTrans(getFrame(), v);

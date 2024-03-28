@@ -14,10 +14,10 @@ int main(void) {
 		//PORTB = 0b1111101; // turn on all LEDs of PORTD
 		PORTB = 0b0000010; // turn on all LEDs of PORTD
 		//PORTB = 0x04 // 0x04 = 0b00000100; // turn on all LEDs of PORTD
-		_delay_ms(1000); // delay of one second
+		_delay_ms(100); // delay of one second
 
 		PORTB = 0b0000000; // turn off all LEDs of PORTD
-		_delay_ms(1000); // delay of one second
+		_delay_ms(100); // delay of one second
 	} // while loop end
 } // main end
 

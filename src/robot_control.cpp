@@ -232,10 +232,24 @@ void Robot_control::frameMove() {
   //rtde_control.stopScript();
 }
 
+
+bool Robot_control::moveZ(double distance) {
+	std::vector<double> v = getPose();
+	if ( v[2] > 0.6 ) 	{ return false; }
+	if ( v[2] < 0.1 ) 	{ return false; }
+	// check på distacnce, om det er i UR-METER osv. lav sikkert bare om til bool return
+	v[2] += distance;
+	rtde_c.moveL(v, _velocity, _acceleration);
+	rtde_c.stopL();
+	return true;
+}
+
+
+
 bool Robot_control::move(std::vector<double> v) { // check om koords er inde for rammerne ( 40*50 ) eller noget 
 	if ( v.empty() || v.size() != 3 || !isFrameCreated() ) 	{ return false; } // check om koordinater er fyldt, skrevet korrekt osv...
 	if ( v[0] > 0.4 || v[1] > 0.5 || v[2] > 0.6 ) 		{ return false; }
-	if ( v[0] < 0.0 || v[1] < 0.0 || v[2] < 0.1 ) 		{ return false; }
+	if ( v[0] < 0.0 || v[1] < 0.0 || v[2] < 0.01 ) 		{ return false; }
 	
 	insertRotvec(v);
 	std::vector<double> x = rtde_c.poseTrans(getFrame(), v);

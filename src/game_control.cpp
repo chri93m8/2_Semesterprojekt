@@ -33,6 +33,7 @@ void Game_control::settings(){
 	std::cout<<"SETTINGS"<<std::endl;
 	std::cout<<"1: adjust speed"<<std::endl;
 	std::cout<<"2: adjust acceleration"<<std::endl;
+	std::cout<<"3: create frame"<<std::endl;
 	std::cin>>option; 
 	
 	switch(option){
@@ -51,6 +52,9 @@ void Game_control::settings(){
 			//rc.acceleration = acceleration; 
 			break;
 		//create frame, move frame
+		case 3: 
+			rc.createFrame();
+			break; 
 	}
 
 }
@@ -59,16 +63,46 @@ void Game_control::home(){
 
 	//rc.printFrame();
 	std::cout<<"Game_control.home running..."<<std::endl; 
+	
 	rc.move(homeVec);
 	rc.move(rod1);
 	rc.move(rod2);
 	rc.move(rod3);
-	rc.move(DiscP1);
-	rc.move(DiscP2);
-	rc.move(DiscP3);
-	rc.move(DiscP4);
-	rc.move(DiscP5);
-
+	rc.move(discP1);
+	rc.move(discP2);
+	rc.move(discP3);
+	rc.move(discP4);
+	rc.move(discP5);
+	
+	/*
+	
+	bool a = rc.move(homeVec);
+	std::cout<<a<<std::endl;
+	a = rc.move(rod1);
+	a = rc.move(homeVec);
+		std::cout<<a<<std::endl;
+	a =rc.move(rod2);
+	a = rc.move(homeVec);
+		std::cout<<a<<std::endl;
+	a =rc.move(rod3);
+	a = rc.move(homeVec);
+		std::cout<<a<<std::endl;
+	a =rc.move(discP1);
+	a = rc.move(homeVec);
+		std::cout<<a<<std::endl;
+	a =rc.move(discP2);
+	a = rc.move(homeVec);
+		std::cout<<a<<std::endl;
+	a =rc.move(discP3);
+	a = rc.move(homeVec);
+		std::cout<<a<<std::endl;
+	a =rc.move(discP4);
+	a = rc.move(homeVec);
+		std::cout<<a<<std::endl;
+	a =rc.move(discP5);
+	a = rc.move(homeVec);
+		std::cout<<a<<std::endl;
+	*/
 }
 
 void Game_control::discDistribution(){

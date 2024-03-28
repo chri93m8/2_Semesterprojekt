@@ -50,6 +50,7 @@ void Game_control::settings(){
 			std::cout<<"New acceleration: "<<acceleration<<std::endl; 
 			//rc.acceleration = acceleration; 
 			break;
+		//create frame, move frame
 	}
 
 }
@@ -58,7 +59,15 @@ void Game_control::home(){
 
 	//rc.printFrame();
 	std::cout<<"Game_control.home running..."<<std::endl; 
-	//rc.move(homeVec);
+	rc.move(homeVec);
+	rc.move(rod1);
+	rc.move(rod2);
+	rc.move(rod3);
+	rc.move(DiscP1);
+	rc.move(DiscP2);
+	rc.move(DiscP3);
+	rc.move(DiscP4);
+	rc.move(DiscP5);
 
 }
 
@@ -69,7 +78,7 @@ std::cout<<rodState<<std::endl;
 
 		int disc = 1;
 		std::cout<<disc<<std::endl;
-		while(rodState<5){ //mens der stadig er discs tilbage
+		while(rodState<=5){ //mens der stadig er discs tilbage
 			//disc = findDisc().value; 
 			//isSorted = findDisc().isSorted;
 			

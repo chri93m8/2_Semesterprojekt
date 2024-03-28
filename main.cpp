@@ -6,8 +6,12 @@
 int main(int argc, char* argv[]) {
 //cunt
 
-	//Robot_control rc("192.168.1.54");
-	Game_control gc("192.168.1.54");
+	Robot_control rc("192.168.1.54");
+	//Game_control gc("192.168.1.54");
+	//rc.moveTrans();
+	rc.moveZ(-0.1);
+	rc.moveZ(0.1);
+	rc.moveZ(-0.1);
 	
 	
 	

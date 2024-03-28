@@ -42,6 +42,7 @@ class Robot_control {
 		//------ Game_control
 		bool forceDown(int maxHeight = 10); // kører -> finde disk -> stop movement -> return
 		bool move(std::vector<double> v);
+		bool moveZ(double distance);
 		//mangler moveZ som modtager negativ eller positiv tal størrelse
 };
 

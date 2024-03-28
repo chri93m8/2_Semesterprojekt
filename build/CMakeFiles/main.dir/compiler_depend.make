@@ -4,9 +4,9 @@
 CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/stdc-predef.h \
   ../include/robot_control.h \
-  /usr/include/ur_rtde/rtde_control_interface.h \
-  /usr/include/ur_rtde/rtde.h \
-  /usr/include/ur_rtde/rtde_export.h \
+  /usr/local/include/ur_rtde/rtde_control_interface.h \
+  /usr/local/include/ur_rtde/rtde.h \
+  /usr/local/include/ur_rtde/rtde_export.h \
   /usr/include/boost/asio/io_service.hpp \
   /usr/include/boost/asio/io_context.hpp \
   /usr/include/boost/asio/detail/config.hpp \
@@ -888,7 +888,7 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/hashtable_policy.h \
   /usr/include/c++/11/bits/enable_special_members.h \
   /usr/include/c++/11/bits/unordered_map.h \
-  /usr/include/ur_rtde/rtde_utility.h \
+  /usr/local/include/ur_rtde/rtde_utility.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/iomanip \
   /usr/include/c++/11/locale \
@@ -906,11 +906,13 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
-  /usr/include/urcl/script_sender.h \
-  /usr/include/urcl/server.h \
-  /usr/include/urcl/tcp_socket.h \
-  /usr/include/ur_rtde/rtde_receive_interface.h \
-  /usr/include/ur_rtde/robot_state.h \
+  /usr/local/include/urcl/script_sender.h \
+  /usr/local/include/urcl/tcp_server.h \
+  /usr/local/include/urcl/log.h \
+  /usr/include/c++/11/cinttypes \
+  /usr/include/inttypes.h \
+  /usr/local/include/ur_rtde/rtde_receive_interface.h \
+  /usr/local/include/ur_rtde/robot_state.h \
   /usr/include/boost/variant.hpp \
   /usr/include/boost/variant/variant.hpp \
   /usr/include/boost/type_index.hpp \
@@ -1189,9 +1191,9 @@ CMakeFiles/main.dir/src/game_control.cpp.o: ../src/game_control.cpp \
   /usr/include/stdc-predef.h \
   ../include/game_control.h \
   ../include/robot_control.h \
-  /usr/include/ur_rtde/rtde_control_interface.h \
-  /usr/include/ur_rtde/rtde.h \
-  /usr/include/ur_rtde/rtde_export.h \
+  /usr/local/include/ur_rtde/rtde_control_interface.h \
+  /usr/local/include/ur_rtde/rtde.h \
+  /usr/local/include/ur_rtde/rtde_export.h \
   /usr/include/boost/asio/io_service.hpp \
   /usr/include/boost/asio/io_context.hpp \
   /usr/include/boost/asio/detail/config.hpp \
@@ -2073,7 +2075,7 @@ CMakeFiles/main.dir/src/game_control.cpp.o: ../src/game_control.cpp \
   /usr/include/c++/11/bits/hashtable_policy.h \
   /usr/include/c++/11/bits/enable_special_members.h \
   /usr/include/c++/11/bits/unordered_map.h \
-  /usr/include/ur_rtde/rtde_utility.h \
+  /usr/local/include/ur_rtde/rtde_utility.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/iomanip \
   /usr/include/c++/11/locale \
@@ -2091,11 +2093,13 @@ CMakeFiles/main.dir/src/game_control.cpp.o: ../src/game_control.cpp \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
-  /usr/include/urcl/script_sender.h \
-  /usr/include/urcl/server.h \
-  /usr/include/urcl/tcp_socket.h \
-  /usr/include/ur_rtde/rtde_receive_interface.h \
-  /usr/include/ur_rtde/robot_state.h \
+  /usr/local/include/urcl/script_sender.h \
+  /usr/local/include/urcl/tcp_server.h \
+  /usr/local/include/urcl/log.h \
+  /usr/include/c++/11/cinttypes \
+  /usr/include/inttypes.h \
+  /usr/local/include/ur_rtde/rtde_receive_interface.h \
+  /usr/local/include/ur_rtde/robot_state.h \
   /usr/include/boost/variant.hpp \
   /usr/include/boost/variant/variant.hpp \
   /usr/include/boost/type_index.hpp \
@@ -2568,9 +2572,9 @@ CMakeFiles/main.dir/src/kinematic.cpp.o: ../src/kinematic.cpp \
 CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
   /usr/include/stdc-predef.h \
   ../include/robot_control.h \
-  /usr/include/ur_rtde/rtde_control_interface.h \
-  /usr/include/ur_rtde/rtde.h \
-  /usr/include/ur_rtde/rtde_export.h \
+  /usr/local/include/ur_rtde/rtde_control_interface.h \
+  /usr/local/include/ur_rtde/rtde.h \
+  /usr/local/include/ur_rtde/rtde_export.h \
   /usr/include/boost/asio/io_service.hpp \
   /usr/include/boost/asio/io_context.hpp \
   /usr/include/boost/asio/detail/config.hpp \
@@ -3452,7 +3456,7 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
   /usr/include/c++/11/bits/hashtable_policy.h \
   /usr/include/c++/11/bits/enable_special_members.h \
   /usr/include/c++/11/bits/unordered_map.h \
-  /usr/include/ur_rtde/rtde_utility.h \
+  /usr/local/include/ur_rtde/rtde_utility.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/iomanip \
   /usr/include/c++/11/locale \
@@ -3470,11 +3474,13 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
-  /usr/include/urcl/script_sender.h \
-  /usr/include/urcl/server.h \
-  /usr/include/urcl/tcp_socket.h \
-  /usr/include/ur_rtde/rtde_receive_interface.h \
-  /usr/include/ur_rtde/robot_state.h \
+  /usr/local/include/urcl/script_sender.h \
+  /usr/local/include/urcl/tcp_server.h \
+  /usr/local/include/urcl/log.h \
+  /usr/include/c++/11/cinttypes \
+  /usr/include/inttypes.h \
+  /usr/local/include/ur_rtde/rtde_receive_interface.h \
+  /usr/local/include/ur_rtde/robot_state.h \
   /usr/include/boost/variant.hpp \
   /usr/include/boost/variant/variant.hpp \
   /usr/include/boost/type_index.hpp \
@@ -3816,8 +3822,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/boost/mpl/size_t.hpp:
 
-/usr/include/boost/mpl/max_element.hpp:
-
 /usr/include/boost/type_traits/same_traits.hpp:
 
 /usr/include/boost/mpl/aux_/iter_push_front.hpp:
@@ -3857,6 +3861,10 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/boost/mpl/front.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp:
+
+/usr/include/boost/mpl/fold.hpp:
+
+/usr/include/boost/asio/detail/handler_work.hpp:
 
 /usr/include/alloca.h:
 
@@ -3939,6 +3947,8 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/boost/asio/detail/socket_types.hpp:
 
 /usr/include/boost/asio/detail/cstdint.hpp:
+
+/usr/local/include/urcl/tcp_server.h:
 
 /usr/include/boost/mpl/aux_/push_back_impl.hpp:
 
@@ -4047,8 +4057,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/asm-generic/sockios.h:
 
 /usr/include/c++/11/bits/stl_tempbuf.h:
-
-/usr/include/asm-generic/posix_types.h:
 
 /usr/include/boost/mpl/iterator_category.hpp:
 
@@ -4171,10 +4179,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/boost/date_time/gregorian/greg_duration_types.hpp:
-
-/usr/include/boost/asio/detail/handler_work.hpp:
-
-/usr/include/ur_rtde/rtde_export.h:
 
 /usr/include/boost/date_time/posix_time/posix_time_duration.hpp:
 
@@ -4374,6 +4378,10 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/boost/asio/traits/static_query.hpp:
 
+/usr/include/boost/mpl/aux_/fold_impl.hpp:
+
+/usr/include/c++/11/bits/move.h:
+
 /usr/include/boost/asio/query.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
@@ -4393,6 +4401,10 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/c++/11/bits/locale_facets.h:
 
 /usr/include/c++/11/stdexcept:
+
+/usr/include/c++/11/bits/postypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /usr/include/boost/mpl/aux_/advance_forward.hpp:
 
@@ -4462,10 +4474,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/c++/11/bit:
 
-/usr/include/c++/11/bits/postypes.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
-
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/include/c++/11/bits/range_access.h:
@@ -4500,47 +4508,21 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/boost/asio/detail/is_executor.hpp:
 
-/usr/include/boost/version.hpp:
+/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
 
-/usr/include/c++/11/bits/stl_vector.h:
+/usr/include/boost/operators.hpp:
 
-/usr/include/boost/date_time/time_defs.hpp:
+/usr/include/boost/asio/traits/static_require.hpp:
 
-/usr/include/c++/11/cstddef:
+/usr/include/c++/11/type_traits:
 
-/usr/include/boost/asio/traits/query_member.hpp:
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
-/usr/include/boost/system/detail/system_category_posix.hpp:
+/usr/include/boost/asio/execution/outstanding_work.hpp:
 
-/usr/include/boost/asio/io_context.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
-/usr/include/wchar.h:
-
-/usr/include/boost/asio/execution/impl/bad_executor.ipp:
-
-/usr/include/poll.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/boost/asio/execution/start.hpp:
-
-/usr/include/boost/mpl/bool_fwd.hpp:
-
-/usr/include/x86_64-linux-gnu/asm/sockios.h:
-
-/usr/include/c++/11/cstring:
-
-/usr/include/linux/ioctl.h:
-
-/usr/include/c++/11/bits/std_function.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
-
-/usr/include/boost/preprocessor/control/expr_iif.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+/usr/include/boost/asio/detail/impl/epoll_reactor.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
 
@@ -4580,8 +4562,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/boost/numeric/conversion/int_float_mixture_enum.hpp:
 
-/usr/include/c++/11/bits/nested_exception.h:
-
 /usr/include/boost/asio/detail/timer_queue_ptime.hpp:
 
 /usr/include/c++/11/bits/alloc_traits.h:
@@ -4596,51 +4576,13 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/asm-generic/types.h:
 
+/usr/local/include/ur_rtde/robot_state.h:
+
 /usr/include/x86_64-linux-gnu/asm/ioctl.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
-
-/usr/include/boost/operators.hpp:
-
-/usr/include/boost/asio/traits/static_require.hpp:
-
-/usr/include/c++/11/type_traits:
-
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
-
-/usr/include/boost/asio/execution/outstanding_work.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/boost/asio/detail/impl/epoll_reactor.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/usr/include/boost/asio/detail/std_fenced_block.hpp:
-
-/usr/include/boost/mpl/aux_/static_cast.hpp:
-
-/usr/include/stdlib.h:
-
-/usr/include/boost/date_time/locale_config.hpp:
-
-/usr/include/boost/config/detail/posix_features.hpp:
-
-/usr/include/c++/11/iterator:
-
-/usr/include/boost/preprocessor/arithmetic/add.hpp:
-
-/usr/include/c++/11/cxxabi.h:
-
-/usr/include/boost/mpl/aux_/arity_spec.hpp:
-
-/usr/include/boost/asio/execution/detail/submit_receiver.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/errno.h:
 
 /usr/include/c++/11/bits/std_abs.h:
 
@@ -4704,11 +4646,101 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/string.h:
 
+/usr/include/boost/version.hpp:
+
+/usr/include/c++/11/bits/stl_vector.h:
+
+/usr/include/boost/date_time/time_defs.hpp:
+
+/usr/include/c++/11/cstddef:
+
+/usr/include/boost/asio/traits/query_member.hpp:
+
+/usr/include/boost/system/detail/system_category_posix.hpp:
+
+/usr/include/boost/asio/io_context.hpp:
+
+/usr/include/wchar.h:
+
+/usr/include/boost/asio/execution/impl/bad_executor.ipp:
+
+/usr/include/poll.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/boost/asio/execution/start.hpp:
+
+/usr/include/boost/mpl/bool_fwd.hpp:
+
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
+/usr/include/c++/11/cstring:
+
+/usr/include/linux/ioctl.h:
+
+/usr/include/c++/11/bits/std_function.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/boost/preprocessor/control/expr_iif.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/c++/11/bits/nested_exception.h:
+
+/usr/local/include/ur_rtde/rtde_control_interface.h:
+
+/usr/include/c++/11/cxxabi.h:
+
+/usr/include/boost/mpl/aux_/arity_spec.hpp:
+
+/usr/include/boost/asio/execution/detail/submit_receiver.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
 /usr/include/boost/asio/detail/scheduler.hpp:
 
 /usr/include/boost/mpl/aux_/lambda_support.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/boost/asio/detail/std_fenced_block.hpp:
+
+/usr/include/boost/mpl/aux_/static_cast.hpp:
+
+/usr/include/stdlib.h:
+
+/usr/include/boost/date_time/locale_config.hpp:
+
+/usr/local/include/ur_rtde/rtde_export.h:
+
+/usr/include/stdio.h:
+
+/usr/include/boost/mpl/aux_/yes_no.hpp:
+
+/usr/include/boost/asio/traits/set_error_member.hpp:
+
+/usr/include/boost/date_time/posix_time/posix_time_types.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/boost/mpl/begin_end_fwd.hpp:
+
+/usr/include/boost/asio/execution/prefer_only.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/boost/asio/detail/pop_options.hpp:
+
+/usr/include/boost/config/detail/posix_features.hpp:
+
+/usr/include/c++/11/iterator:
+
+/usr/include/boost/preprocessor/arithmetic/add.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 
@@ -4788,16 +4820,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/c++/11/bits/stl_raw_storage_iter.h:
 
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/include/boost/mpl/begin_end_fwd.hpp:
-
-/usr/include/boost/asio/execution/prefer_only.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
-
-/usr/include/boost/asio/detail/pop_options.hpp:
-
 /usr/include/c++/11/limits:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
@@ -4805,6 +4827,10 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/boost/config.hpp:
 
 /usr/include/boost/type_traits/is_pod.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
 /usr/include/locale.h:
 
@@ -4822,8 +4848,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/boost/asio/traits/schedule_member.hpp:
 
-/usr/include/urcl/server.h:
-
 /usr/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp:
 
 /usr/include/c++/11/bits/functexcept.h:
@@ -4835,10 +4859,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/boost/asio/execution/set_done.hpp:
 
 /usr/include/c++/11/bits/stl_heap.h:
-
-/usr/include/ur_rtde/rtde_control_interface.h:
-
-/usr/include/boost/mpl/aux_/iter_fold_impl.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
@@ -4946,18 +4966,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
-/usr/include/stdio.h:
-
-/usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/include/boost/mpl/aux_/yes_no.hpp:
-
-/usr/include/boost/asio/traits/set_error_member.hpp:
-
-/usr/include/boost/date_time/posix_time/posix_time_types.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
@@ -4977,6 +4985,10 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/boost/asio/detail/memory.hpp:
 
 /usr/include/asm-generic/errno.h:
+
+/usr/local/include/ur_rtde/rtde.h:
+
+/usr/include/boost/mpl/aux_/has_size.hpp:
 
 /usr/include/c++/11/ratio:
 
@@ -5084,6 +5096,10 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/boost/asio/detail/io_control.hpp:
 
+/usr/include/boost/mpl/aux_/config/ctps.hpp:
+
+/usr/include/boost/asio/detail/socket_option.hpp:
+
 /usr/include/boost/asio/detail/reactive_socket_service.hpp:
 
 /usr/include/boost/asio/buffer.hpp:
@@ -5103,10 +5119,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/boost/asio/detail/reactive_socket_accept_op.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
-
-/usr/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp:
-
-/usr/include/boost/type_traits/detail/yes_no_type.hpp:
 
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
@@ -5149,8 +5161,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/c++/11/istream:
 
 /usr/include/c++/11/clocale:
-
-/usr/include/ur_rtde/rtde.h:
 
 /usr/include/c++/11/bits/istream.tcc:
 
@@ -5386,6 +5396,8 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/boost/numeric/conversion/detail/conversion_traits.hpp:
 
+/usr/local/include/urcl/script_sender.h:
+
 /usr/include/boost/type_traits/is_arithmetic.hpp:
 
 /usr/include/boost/asio/ip/impl/basic_endpoint.hpp:
@@ -5399,6 +5411,10 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/boost/mpl/aux_/na_spec.hpp:
 
 /usr/include/boost/mpl/lambda_fwd.hpp:
+
+/usr/include/boost/mpl/max_element.hpp:
+
+/usr/include/inttypes.h:
 
 /usr/include/boost/mpl/aux_/na.hpp:
 
@@ -5425,12 +5441,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/boost/mpl/aux_/nttp_decl.hpp:
 
 /usr/include/boost/mpl/aux_/integral_wrapper.hpp:
-
-/usr/include/boost/mpl/aux_/config/ctps.hpp:
-
-/usr/include/boost/asio/detail/socket_option.hpp:
-
-/usr/include/urcl/script_sender.h:
 
 /usr/include/boost/type_traits/is_scalar.hpp:
 
@@ -5628,8 +5638,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/boost/mpl/aux_/is_msvc_eti_arg.hpp:
 
-/usr/include/ur_rtde/robot_state.h:
-
 /usr/include/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp:
 
 /usr/include/c++/11/bits/ostream.tcc:
@@ -5804,7 +5812,7 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/c++/11/unordered_map:
 
-/usr/include/ur_rtde/rtde_utility.h:
+/usr/local/include/ur_rtde/rtde_utility.h:
 
 /usr/include/c++/11/bits/locale_facets_nonio.h:
 
@@ -5828,9 +5836,13 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/boost/move/detail/config_end.hpp:
 
-/usr/include/urcl/tcp_socket.h:
+/usr/local/include/urcl/log.h:
 
-/usr/include/ur_rtde/rtde_receive_interface.h:
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/c++/11/cinttypes:
+
+/usr/local/include/ur_rtde/rtde_receive_interface.h:
 
 /usr/include/boost/mpl/aux_/config/preprocessor.hpp:
 
@@ -5932,8 +5944,6 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 
 /usr/include/boost/mpl/long.hpp:
 
-/usr/include/boost/mpl/aux_/has_size.hpp:
-
 /usr/include/boost/mpl/bind.hpp:
 
 /usr/include/boost/mpl/bind_fwd.hpp:
@@ -5961,6 +5971,12 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/boost/mpl/aux_/full_lambda.hpp:
 
 /usr/include/boost/mpl/aux_/config/bcc.hpp:
+
+/usr/include/boost/mpl/aux_/iter_fold_impl.hpp:
+
+/usr/include/boost/type_traits/detail/yes_no_type.hpp:
+
+/usr/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp:
 
 /usr/include/boost/asio/detail/conditionally_enabled_mutex.hpp:
 
@@ -6109,9 +6125,3 @@ CMakeFiles/main.dir/src/robot_control.cpp.o: ../src/robot_control.cpp \
 /usr/include/boost/mpl/logical.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp:
-
-/usr/include/boost/mpl/fold.hpp:
-
-/usr/include/c++/11/bits/move.h:
-
-/usr/include/boost/mpl/aux_/fold_impl.hpp:

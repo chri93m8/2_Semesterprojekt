@@ -8,10 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/lina/Workspace/2_Semesterprojekt/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
-  "/home/lina/Workspace/2_Semesterprojekt/src/game_control.cpp" "CMakeFiles/main.dir/src/game_control.cpp.o" "gcc" "CMakeFiles/main.dir/src/game_control.cpp.o.d"
-  "/home/lina/Workspace/2_Semesterprojekt/src/kinematic.cpp" "CMakeFiles/main.dir/src/kinematic.cpp.o" "gcc" "CMakeFiles/main.dir/src/kinematic.cpp.o.d"
-  "/home/lina/Workspace/2_Semesterprojekt/src/robot_control.cpp" "CMakeFiles/main.dir/src/robot_control.cpp.o" "gcc" "CMakeFiles/main.dir/src/robot_control.cpp.o.d"
+  "/home/morten/Workspace/2_Semesterprojekt/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
+  "/home/morten/Workspace/2_Semesterprojekt/src/game_control.cpp" "CMakeFiles/main.dir/src/game_control.cpp.o" "gcc" "CMakeFiles/main.dir/src/game_control.cpp.o.d"
+  "/home/morten/Workspace/2_Semesterprojekt/src/kinematic.cpp" "CMakeFiles/main.dir/src/kinematic.cpp.o" "gcc" "CMakeFiles/main.dir/src/kinematic.cpp.o.d"
+  "/home/morten/Workspace/2_Semesterprojekt/src/mic_control.cpp" "CMakeFiles/main.dir/src/mic_control.cpp.o" "gcc" "CMakeFiles/main.dir/src/mic_control.cpp.o.d"
+  "/home/morten/Workspace/2_Semesterprojekt/src/robot_control.cpp" "CMakeFiles/main.dir/src/robot_control.cpp.o" "gcc" "CMakeFiles/main.dir/src/robot_control.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/game_control.cpp.o.d"
   "CMakeFiles/main.dir/src/kinematic.cpp.o"
   "CMakeFiles/main.dir/src/kinematic.cpp.o.d"
+  "CMakeFiles/main.dir/src/mic_control.cpp.o"
+  "CMakeFiles/main.dir/src/mic_control.cpp.o.d"
   "CMakeFiles/main.dir/src/robot_control.cpp.o"
   "CMakeFiles/main.dir/src/robot_control.cpp.o.d"
   "main"

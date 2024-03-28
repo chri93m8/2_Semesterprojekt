@@ -1,15 +1,20 @@
 #ifndef MIC_CONTROL_H
 #define MIC_CONTROL_H
 
+#include <stdio.h>
+//#define CE_SERIAL_IMPLEMENTATION
+#include "ceSerial.h"
+#include <iostream>
+
 // undersøg brug af https://github.com/yan9a/serial lib
 
-class Mic_Control{
+class Mic_control{
 private:
+public:
 
 	void requestData();
 	// spøg MC om data fra Potmeter og motor amp 
 	
-public:
 	
 	void Open(); 
 	//Send signal til MC der åbner gribbern
